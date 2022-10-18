@@ -9,16 +9,30 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/css": "^11.10.0",
+    "@emotion/react": "^11.10.4",
+    "@emotion/server": "^11.10.0",
+    "@emotion/styled": "^11.10.4",
+    "@mui/icons-material": "^5.10.9",
+    "@mui/material": "^5.10.10",
+    "classnames": "^2.3.2",
     "next": "12.3.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-redux": "^8.0.4"
   },
   "devDependencies": {
+    "@reduxjs/toolkit": "^1.8.6",
+    "@spotify/eslint-config-base": "^14.1.0",
+    "@spotify/eslint-config-typescript": "^14.1.0",
+    "@trivago/prettier-plugin-sort-imports": "^3.3.1",
     "@types/node": "18.11.0",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
     "eslint": "8.25.0",
     "eslint-config-next": "12.3.1",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.7.1",
     "typescript": "4.8.4"
   }
 }
