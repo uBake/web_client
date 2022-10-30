@@ -1,12 +1,12 @@
-import { Container } from '@mui/system';
 import type { NextPage } from 'next';
 
-import { StyledButton } from '../src/components/buttons';
+import { Container } from '../src/components/Container/Container';
+import { Button } from '../src/components/Button';
 
 const Home: NextPage = () => {
   return (
     <Container>
-      <StyledButton />
+      <Button>Btn</Button>
     </Container>
   );
 };

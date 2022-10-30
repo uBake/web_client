@@ -1,35 +1,29 @@
-import { CacheProvider, EmotionCache } from '@emotion/react';
-import type { AppProps } from 'next/app';
+import { AppProps } from 'next/app';
 import Head from 'next/head';
+import normalize from 'normalize-jss';
+import { SheetsRegistry, jss } from 'react-jss';
 import { Provider } from 'react-redux';
 
-import { store } from '../redux/store';
+
+
 import { MyThemeProvider } from '../src/themes/ThemeProvider';
-import createEmotionCache from '../ui/utils/createEmotionCache';
-import '../ui/utils/globalStyles';
+import { store } from '../store/store';
 
-const clientSideEmotionCache = createEmotionCache();
 
-export interface MyAppProps extends AppProps {
-  emotionCache: EmotionCache;
-}
-
-function MyApp({
-  Component,
-  emotionCache = clientSideEmotionCache,
-  pageProps
-}: MyAppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
+  const sheets = new SheetsRegistry();
+  const normalizeCss = jss.createStyleSheet(normalize);
+  sheets.add(normalizeCss);
   return (
     <>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <style type="text/css">{sheets.toString()}</style>
       </Head>
       <Provider store={store}>
-        <CacheProvider value={emotionCache}>
-          <MyThemeProvider>
-            <Component {...pageProps} />
-          </MyThemeProvider>
-        </CacheProvider>
+        <MyThemeProvider>
+          <Component {...pageProps} />
+        </MyThemeProvider>
       </Provider>
     </>
   );

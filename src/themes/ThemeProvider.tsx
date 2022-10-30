@@ -1,11 +1,11 @@
-import { ThemeProvider } from '@mui/material';
-import { ThemeProviderProps } from '@mui/system';
+import { FC, PropsWithChildren } from 'react';
+import { ThemeProvider } from 'react-jss';
 
-import { getThemeMode } from '../../redux/slices/themeSlice';
-import { useSelector } from '../../redux/store';
-import { themes } from './theme';
+import { themes } from '.';
+import { getThemeMode } from '../../store/slices/themeSlice';
+import { useSelector } from '../../store/store';
 
-export const MyThemeProvider = ({ children }: Partial<ThemeProviderProps>) => {
+export const MyThemeProvider: FC<PropsWithChildren> = ({ children }) => {
   const currTheme = useSelector(getThemeMode);
   const theme = themes[currTheme];
 
