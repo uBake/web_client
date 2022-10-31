@@ -1,7 +1,8 @@
-import * as colors from './colors';
+import { Theme } from '../types';
+import { colors } from './colors';
 import { defaultTheme } from './default';
 
-export const darkTheme = {
+export const darkTheme: Theme = {
   ...defaultTheme,
   palette: {
     primary: colors.primary[80],
@@ -26,6 +27,17 @@ export const darkTheme = {
     onSurface: colors.neutral[80],
     surfaceVariant: colors.neutralVariant[30],
     onSurfaceVariant: colors.neutralVariant[80],
-    outline: colors.neutralVariant[60]
-  }
+    outline: colors.neutralVariant[60],
+    surface1: 'rgba(108, 89, 95, 0.05)',
+    surface2:
+      'linear-gradient(0deg, rgba(108, 89, 95, 0.08), rgba(108, 89, 95, 0.08)), #FFFBFF',
+    surface3:
+      'linear-gradient(0deg, rgba(108, 89, 95, 0.11), rgba(108, 89, 95, 0.11)), #FFFBFF',
+    surface4: '',
+    surface5: ''
+  },
+  border: {
+    outline: `1px solid ${colors.neutralVariant[60]}`
+  },
+  name: 'Dark'
 };

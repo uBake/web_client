@@ -1,13 +1,16 @@
+import { colors } from './themes/colors';
 import { Shadows } from './themes/shadows';
 import { ZIndex } from './themes/zIndex';
 
-
 export interface Theme {
+  name: 'Dark' | 'Light';
   palette: Palette;
   shadows: Shadows;
   // typography: Typography;
   zIndex: ZIndex;
   borderRadius: BorderRadius;
+  border: Border;
+  aspectRatio: AspectRatio;
 }
 
 declare module 'react-jss' {
@@ -18,8 +21,21 @@ declare module 'react-jss' {
       // typography: Typography;
       zIndex: ZIndex;
       borderRadius: BorderRadius;
+      border: Border;
+      aspectRatio: AspectRatio;
     }
   }
+}
+
+export interface AspectRatio {
+  '1/1': number;
+  '5/4': number;
+  '4/3': number;
+  '16/9': number;
+}
+
+export interface Border {
+  outline: string;
 }
 
 export interface BorderRadius {
@@ -67,13 +83,20 @@ export interface Palette {
   surfaceVariant: string;
   onSurfaceVariant: string;
   outline: string;
+  surface1: string;
+  surface2: string;
+  surface3: string;
+  surface4: string;
+  surface5: string;
 }
 
 export interface Colors {
-  primary: typeof primary;
-  secondary: typeof secondary;
-  tertiary: typeof tertiary;
-  error: typeof error;
-  neutral: typeof neutral;
-  neutralVariant: typeof neutralVariant;
+  primary: typeof colors.primary;
+  secondary: typeof colors.secondary;
+  tertiary: typeof colors.tertiary;
+  error: typeof colors.error;
+  neutral: typeof colors.neutral;
+  neutralVariant: typeof colors.neutralVariant;
+  lightSurface: typeof colors.lightSurface;
+  darkSurface: typeof colors.darkSurface;
 }

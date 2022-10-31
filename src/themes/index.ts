@@ -2,8 +2,8 @@ import { darkTheme } from './dark';
 import { lightTheme } from './light';
 
 export enum ThemeModes {
-  light = 'light',
-  dark = 'dark'
+  light = 'Light',
+  dark = 'Dark'
 }
 
 export const themes = {

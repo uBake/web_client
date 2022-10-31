@@ -1,3 +1,6 @@
+import { Colors } from '../types';
+
+
 const primary = {
   0: '#000000',
   10: '#3E0021',
@@ -94,4 +97,17 @@ const neutralVariant = {
   100: '#FFFFFF'
 };
 
-export { primary, secondary, tertiary, error, neutral, neutralVariant };
+const lightSurface = '#FFFBFF';
+
+const darkSurface = '#1D1B1B';
+
+export const colors: Colors = {
+  primary,
+  secondary,
+  tertiary,
+  error,
+  neutral,
+  neutralVariant,
+  lightSurface,
+  darkSurface
+};
