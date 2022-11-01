@@ -3,28 +3,26 @@ import { FC, PropsWithChildren } from 'react';
 
 import { useStyles } from './styles';
 
-export type ButtonVariants =
-  | 'filled'
-  | 'tonal'
-  | 'outlined'
-  | 'elevated'
-  | 'ghost';
+type ButtonVariants = 'filled' | 'tonal' | 'outlined' | 'elevated' | 'ghost';
+
+type ButtonDirections = 'row' | 'column';
 
 export interface ButtonProps extends PropsWithChildren {
   disabled: boolean;
   variant: ButtonVariants;
+  direction: ButtonDirections;
 }
 
 export const Button: FC<ButtonProps> = ({
   children,
   disabled = false,
   variant = 'filled',
-  ...props
+  direction = 'row'
 }) => {
-  const styles = useStyles();
+  const styles = useStyles({ disabled, direction, variant });
 
   return (
-    <button disabled={disabled} className={classNames([styles.button, styles[variant]])} {...props}>
+    <button disabled={disabled} className={classNames([styles.button, styles[variant]])}>
       {children}
     </button>
   );

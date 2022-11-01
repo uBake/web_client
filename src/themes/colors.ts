@@ -1,6 +1,5 @@
 import { Colors } from '../types';
 
-
 const primary = {
   0: '#000000',
   10: '#3E0021',
@@ -67,7 +66,7 @@ const error = {
 
 const neutral = {
   0: '#000000',
-  10: '#201A1C',
+  10: '#1D1B1B',
   20: '#352F30',
   30: '#4C4547',
   40: '#645C5E',
@@ -97,9 +96,23 @@ const neutralVariant = {
   100: '#FFFFFF'
 };
 
-const lightSurface = '#FFFBFF';
+const lightSurfaces = {
+  0: neutral[99],
+  1: '#F8F3F7',
+  2: '#F3EEF2',
+  3: '#EFE9ED',
+  4: '#EDE8EC',
+  5: '#EAE4E9'
+};
 
-const darkSurface = '#1D1B1B';
+const darkSurfaces = {
+  0: neutral[10],
+  1: '#262324',
+  2: '#2C2829',
+  3: '#322D2E',
+  4: '#342F30',
+  5: '#373233'
+};
 
 export const colors: Colors = {
   primary,
@@ -108,6 +121,6 @@ export const colors: Colors = {
   error,
   neutral,
   neutralVariant,
-  lightSurface,
-  darkSurface
+  lightSurfaces,
+  darkSurfaces
 };

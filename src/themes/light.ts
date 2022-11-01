@@ -1,7 +1,6 @@
 import { Theme } from '../types';
-import { colors }  from './colors';
+import { colors } from './colors';
 import { defaultTheme } from './default';
-
 
 export const lightTheme: Theme = {
   ...defaultTheme,
@@ -24,18 +23,16 @@ export const lightTheme: Theme = {
     onErrorContainer: colors.error[10],
     background: colors.neutral[99],
     onBackground: colors.neutral[10],
-    surface: colors.neutral[99],
+    surface: colors.lightSurfaces[0],
     onSurface: colors.neutral[10],
     surfaceVariant: colors.neutralVariant[90],
     onSurfaceVariant: colors.neutralVariant[30],
     outline: colors.neutralVariant[50],
-    surface1: 'rgba(108, 89, 95, 0.05)',
-    surface2:
-      'linear-gradient(0deg, rgba(108, 89, 95, 0.08), rgba(108, 89, 95, 0.08)), #FFFBFF',
-    surface3:
-      'linear-gradient(0deg, rgba(108, 89, 95, 0.11), rgba(108, 89, 95, 0.11)), #FFFBFF',
-    surface4: '',
-    surface5: ''
+    surface1: colors.lightSurfaces[1],
+    surface2: colors.lightSurfaces[2],
+    surface3: colors.lightSurfaces[3],
+    surface4: colors.lightSurfaces[4],
+    surface5: colors.lightSurfaces[5]
   },
   border: {
     outline: `1px solid ${colors.neutralVariant[50]}`

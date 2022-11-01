@@ -1,5 +1,6 @@
 import { createUseStyles } from 'react-jss';
 
+import { ButtonProps } from './Button';
 
 export const useStyles = createUseStyles(({ palette, borderRadius }) => ({
   button: {
@@ -11,28 +12,88 @@ export const useStyles = createUseStyles(({ palette, borderRadius }) => ({
     minHeight: 40,
     border: 'none',
     borderRadius: borderRadius.full,
-    padding: [10, 24]
+    padding: [10, 24],
+    flexDirection: ({ direction }: ButtonProps) => direction
   },
   filled: {
     background: palette.primary,
     color: palette.onPrimary,
-    '&:hover': {},
-    '&:active': {},
+    '&:hover': {
+      background: palette.primary,
+      color: palette.onPrimary
+    },
+    '&:active': {
+      background: palette.primary,
+      color: palette.onPrimary
+    },
     '&[disabled]': {
-			color: palette.onSurface
-		}
+      color: palette.onSurface,
+      background: palette.primaryContainer[100]
+    }
   },
   tonal: {
     background: palette.primaryContainer,
-    color: palette.onPrimaryContainer
+    color: palette.onPrimaryContainer,
+    '&:hover': {
+      background: palette.primary,
+      color: palette.onPrimary
+    },
+    '&:active': {
+      background: palette.primary,
+      color: palette.onPrimary
+    },
+    '&[disabled]': {
+      color: palette.onSurface,
+      background: palette.primaryContainer[100]
+    }
   },
   outlined: {
-		background: 'transparent',
-		border: [1, 'solid', palette.outline],
-		color: palette.primary
-	},
+    background: 'transparent',
+    border: [1, 'solid', palette.outline],
+    color: palette.primary,
+    '&:hover': {
+      background: palette.primary,
+      color: palette.onPrimary
+    },
+    '&:active': {
+      background: palette.primary,
+      color: palette.onPrimary
+    },
+    '&[disabled]': {
+      color: palette.onSurface,
+      background: palette.primaryContainer[100]
+    }
+  },
   elevated: {
-		background: palette.surface
-	},
-  ghost: {}
+    background: palette.surface1,
+    color: palette.primary,
+    '&:hover': {
+      background: palette.primary,
+      color: palette.onPrimary
+    },
+    '&:active': {
+      background: palette.primary,
+      color: palette.onPrimary
+    },
+    '&[disabled]': {
+      color: palette.onSurface,
+      background: palette.primaryContainer[100]
+    }
+  },
+  ghost: {
+    background: 'white',
+    color: palette.primary,
+    '&:hover': {
+      background: palette.primary,
+      color: palette.onPrimary
+    },
+    '&:active': {
+      background: palette.primary,
+      color: palette.onPrimary
+    },
+    '&[disabled]': {
+      color: palette.onSurface,
+      background: palette.primaryContainer[100]
+    }
+  }
 }));

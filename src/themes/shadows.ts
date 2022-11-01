@@ -1,3 +1,3 @@
-export const shadows: Shadows = ['none', '0, 2, 1, -1, 0, 1, 1, 0, 0, 1, 3, 0'];
+import { Shadows } from '../types';
 
-export type Shadows = string[];
+export const shadows: Shadows = ['none', '0, 2, 1, -1, 0, 1, 1, 0, 0, 1, 3, 0'];

@@ -1,12 +1,8 @@
-import { colors } from './themes/colors';
-import { Shadows } from './themes/shadows';
-import { ZIndex } from './themes/zIndex';
-
 export interface Theme {
   name: 'Dark' | 'Light';
   palette: Palette;
   shadows: Shadows;
-  // typography: Typography;
+  typography: Typography;
   zIndex: ZIndex;
   borderRadius: BorderRadius;
   border: Border;
@@ -18,7 +14,7 @@ declare module 'react-jss' {
     export interface Theme {
       palette: Palette;
       shadows: Shadows;
-      // typography: Typography;
+      typography: Typography;
       zIndex: ZIndex;
       borderRadius: BorderRadius;
       border: Border;
@@ -26,6 +22,8 @@ declare module 'react-jss' {
     }
   }
 }
+
+export type Shadows = string[];
 
 export interface AspectRatio {
   '1/1': number;
@@ -90,13 +88,52 @@ export interface Palette {
   surface5: string;
 }
 
-export interface Colors {
-  primary: typeof colors.primary;
-  secondary: typeof colors.secondary;
-  tertiary: typeof colors.tertiary;
-  error: typeof colors.error;
-  neutral: typeof colors.neutral;
-  neutralVariant: typeof colors.neutralVariant;
-  lightSurface: typeof colors.lightSurface;
-  darkSurface: typeof colors.darkSurface;
+export type Colors = Record<ColorNames, Color>;
+
+export enum ColorNames {
+  primary = 'primary',
+  secondary = 'secondary',
+  tertiary = 'tertiary',
+  error = 'error',
+  neutral = 'neutral',
+  neutralVariant = 'neutralVariant',
+  lightSurfaces = 'lightSurfaces',
+  darkSurfaces = 'darkSurfaces'
+}
+
+export type Color = Record<number, ColorTone>;
+
+export type ColorTone = string;
+
+export interface Typography {
+  weights: FontWeights;
+  sizes: TypographySizes;
+}
+
+export type FontWeights = Record<FontWeightsVariants, FontWeight>;
+
+export type FontWeightsVariants = 400 | 500 | 700;
+
+export type FontWeight = Record<'fontWeight', FontWeightValue>;
+
+export type FontWeightValue = number;
+
+export type TypographySizes = Record<TypographyTypes, TypographyTypeVariants>;
+
+export type TypographyTypes =
+  | 'display'
+  | 'headline'
+  | 'title'
+  | 'label'
+  | 'body';
+
+export type TypographyTypeVariants = Record<TypographyTypeSizes, FontSizeProps>;
+
+export type TypographyTypeSizes = 'large' | 'medium' | 'small';
+
+export interface FontSizeProps {
+  fontSize: number;
+  lineHeight: string;
+  letterSpacing?: number;
+  fontWeight?: number;
 }

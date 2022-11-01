@@ -23,18 +23,16 @@ export const darkTheme: Theme = {
     onErrorContainer: colors.error[90],
     background: colors.neutral[10],
     onBackground: colors.neutral[90],
-    surface: colors.neutral[10],
+    surface: colors.darkSurfaces[0],
     onSurface: colors.neutral[80],
     surfaceVariant: colors.neutralVariant[30],
     onSurfaceVariant: colors.neutralVariant[80],
     outline: colors.neutralVariant[60],
-    surface1: 'rgba(108, 89, 95, 0.05)',
-    surface2:
-      'linear-gradient(0deg, rgba(108, 89, 95, 0.08), rgba(108, 89, 95, 0.08)), #FFFBFF',
-    surface3:
-      'linear-gradient(0deg, rgba(108, 89, 95, 0.11), rgba(108, 89, 95, 0.11)), #FFFBFF',
-    surface4: '',
-    surface5: ''
+    surface1: colors.darkSurfaces[1],
+    surface2: colors.darkSurfaces[2],
+    surface3: colors.darkSurfaces[3],
+    surface4: colors.darkSurfaces[4],
+    surface5: colors.darkSurfaces[5]
   },
   border: {
     outline: `1px solid ${colors.neutralVariant[60]}`
