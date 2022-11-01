@@ -8,9 +8,9 @@ type ButtonVariants = 'filled' | 'tonal' | 'outlined' | 'elevated' | 'ghost';
 type ButtonDirections = 'row' | 'column';
 
 export interface ButtonProps extends PropsWithChildren {
-  disabled: boolean;
-  variant: ButtonVariants;
-  direction: ButtonDirections;
+  disabled?: boolean;
+  variant?: ButtonVariants;
+  direction?: ButtonDirections;
 }
 
 export const Button: FC<ButtonProps> = ({
