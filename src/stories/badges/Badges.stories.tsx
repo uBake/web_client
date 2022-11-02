@@ -9,7 +9,7 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     count: {
-      options: [undefined, 5],
+      options: [undefined, 5, '99+'],
       defaultValue: undefined
     },
     hPos: {

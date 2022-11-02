@@ -1,6 +1,9 @@
 import { createUseStyles } from 'react-jss';
 
+
+
 import { BadgeProps } from './Badge';
+
 
 export const useStyles = createUseStyles(
   ({ palette, borderRadius, aspectRatio, typography }) => ({
@@ -9,8 +12,14 @@ export const useStyles = createUseStyles(
       width: 'fit-content'
     },
     badge: {
-      aspectRatio: aspectRatio['1/1'],
-      minWidth: ({ count }: BadgeProps) => (count !== undefined ? 16 : 8),
+      aspectRatio: ({ count }: BadgeProps) =>
+        count !== undefined ? 'auto' : aspectRatio['1/1'],
+      minWidth: ({ count }: BadgeProps) => (count !== undefined ? 'auto' : 8),
+      height: ({ count }: BadgeProps) => (count !== undefined ? 16 : 8),
+      padding: ({ count }: BadgeProps) => (count !== undefined ? '0 4.5px' : 0),
+      margin: 0,
+      marginBlock: 0,
+      marginInline: 0,
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
