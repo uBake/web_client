@@ -30,7 +30,8 @@ export const globalStyles = {
     },
     '*': {
       boxSizing: 'border-box',
-      fontFamily: ['Manrope', 'sans-serif']
+      fontFamily: ['Manrope', 'sans-serif'],
+      transition: 'all .3s ease-in-out'
     }
   }
 };

@@ -57,35 +57,37 @@ export interface ZIndex {
   fab: number;
 }
 
-export interface Palette {
-  primary: string;
-  onPrimary: string;
-  primaryContainer: string;
-  onPrimaryContainer: string;
-  secondary: string;
-  onSecondary: string;
-  secondaryContainer: string;
-  onSecondaryContainer: string;
-  tertiary: string;
-  onTertiary: string;
-  tertiaryContainer: string;
-  onTertiaryContainer: string;
-  error: string;
-  onError: string;
-  errorContainer: string;
-  onErrorContainer: string;
-  background: string;
-  onBackground: string;
-  surface: string;
-  onSurface: string;
-  surfaceVariant: string;
-  onSurfaceVariant: string;
-  outline: string;
-  surface1: string;
-  surface2: string;
-  surface3: string;
-  surface4: string;
-  surface5: string;
+export type Palette = Record<PaletteColorNames, string>;
+
+export enum PaletteColorNames {
+  primary = 'primary',
+  onPrimary = 'onPrimary',
+  primaryContainer = 'primaryContainer',
+  onPrimaryContainer = 'onPrimaryContainer',
+  secondary = 'secondary',
+  onSecondary = 'onSecondary',
+  secondaryContainer = 'secondaryContainer',
+  onSecondaryContainer = 'onSecondaryContainer',
+  tertiary = 'tertiary',
+  onTertiary = 'onTertiary',
+  tertiaryContainer = 'tertiaryContainer',
+  onTertiaryContainer = 'onTertiaryContainer',
+  error = 'error',
+  onError = 'onError',
+  errorContainer = 'errorContainer',
+  onErrorContainer = 'onErrorContainer',
+  background = 'background',
+  onBackground = 'onBackground',
+  surface = 'surface',
+  onSurface = 'onSurface',
+  surfaceVariant = 'surfaceVariant',
+  onSurfaceVariant = 'onSurfaceVariant',
+  outline = 'outline',
+  surface1 = 'surface1',
+  surface2 = 'surface2',
+  surface3 = 'surface3',
+  surface4 = 'surface4',
+  surface5 = 'surface5'
 }
 
 export type Colors = Record<ColorNames, Color>;

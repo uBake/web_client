@@ -34,15 +34,15 @@ const secondary = {
 
 const tertiary = {
   0: '#000000',
-  10: '#2F1400',
-  20: '#49290E',
-  30: '#633E22',
-  40: '#7D5637',
-  50: '#996E4D',
-  60: '#B68764',
-  70: '#D3A17D',
-  80: '#F0BC96',
-  90: '#FFDCC4',
+  10: '#2F1500',
+  20: '#4E2600',
+  30: '#6F3900',
+  40: '#914C00',
+  50: '#B16317',
+  60: '#D17C30',
+  70: '#F09648',
+  80: '#FFB77F',
+  90: '#FFDCC3',
   95: '#FFEDE3',
   99: '#FFFBFF',
   100: '#FFFFFF'
@@ -66,16 +66,16 @@ const error = {
 
 const neutral = {
   0: '#000000',
-  10: '#1D1B1B',
-  20: '#352F30',
-  30: '#4C4547',
-  40: '#645C5E',
-  50: '#7D7577',
-  60: '#988E90',
-  70: '#B3A9AB',
-  80: '#CFC4C6',
-  90: '#EBE0E2',
-  95: '#FAEEF0',
+  10: '#3D0023',
+  20: '#5D1139',
+  30: '#792950',
+  40: '#964169',
+  50: '#B45982',
+  60: '#D2729C',
+  70: '#F18BB7',
+  80: '#FFB0CF',
+  90: '#FFD9E5',
+  95: '#FFECF1',
   99: '#FFFBFF',
   100: '#FFFFFF'
 };
@@ -98,20 +98,20 @@ const neutralVariant = {
 
 const lightSurfaces = {
   0: neutral[99],
-  1: '#F8F3F7',
-  2: '#F3EEF2',
-  3: '#EFE9ED',
-  4: '#EDE8EC',
-  5: '#EAE4E9'
+  1: `linear-gradient(${primary[40]}0D, ${primary[40]}0D), ${neutral[99]}`,
+  2: `linear-gradient(${primary[40]}14, ${primary[40]}14), ${neutral[99]}`,
+  3: `linear-gradient(${primary[40]}1C, ${primary[40]}1C), ${neutral[99]}`,
+  4: `linear-gradient(${primary[40]}1E, ${primary[40]}1E), ${neutral[99]}`,
+  5: `linear-gradient(${primary[40]}23, ${primary[40]}23), ${neutral[99]}`
 };
 
 const darkSurfaces = {
   0: neutral[10],
-  1: '#262324',
-  2: '#2C2829',
-  3: '#322D2E',
-  4: '#342F30',
-  5: '#373233'
+  1: `linear-gradient(${primary[80]}0D, ${primary[80]}0D), ${neutral[10]}`,
+  2: `linear-gradient(${primary[80]}14, ${primary[80]}14), ${neutral[10]}`,
+  3: `linear-gradient(${primary[80]}1C, ${primary[80]}1C), ${neutral[10]}`,
+  4: `linear-gradient(${primary[80]}1E, ${primary[80]}1E), ${neutral[10]}`,
+  5: `linear-gradient(${primary[80]}23, ${primary[80]}23), ${neutral[10]}`
 };
 
 export const colors: Colors = {
