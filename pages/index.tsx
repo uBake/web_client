@@ -1,15 +1,14 @@
 import type { NextPage } from 'next';
 
-import { Container } from '../src/components/Container/Container';
-import { Button } from '../src/components/Button/Button';
 import { Badge } from '../src/components/Badge/Badge';
+import { Button } from '../src/components/Button/Button';
+import { Container } from '../src/components/Container/Container';
+import { Icon } from '../src/components/Icon/Icon';
 
 const Home: NextPage = () => {
   return (
     <Container>
-			<Badge count={5}>
-      <Button>Btn</Button>
-			</Badge>
+      <Icon icon="Account" size={200} />
     </Container>
   );
 };
