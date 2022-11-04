@@ -7,6 +7,7 @@ export interface Theme {
   borderRadius: BorderRadius;
   border: Border;
   aspectRatio: AspectRatio;
+  opacity: Opacity;
 }
 
 declare module 'react-jss' {
@@ -19,18 +20,20 @@ declare module 'react-jss' {
       borderRadius: BorderRadius;
       border: Border;
       aspectRatio: AspectRatio;
+      opacity: Opacity;
     }
   }
 }
 
+export type Opacity = Record<opacityVariants, string>;
+
+export type opacityVariants = 8 | 12 | 16;
+
 export type Shadows = string[];
 
-export interface AspectRatio {
-  '1/1': number;
-  '5/4': number;
-  '4/3': number;
-  '16/9': number;
-}
+export type AspectRatio = Record<AspectRatioVariants, number>;
+
+type AspectRatioVariants = '1/1' | '5/4' | '4/3' | '16/9';
 
 export interface Border {
   outline: string;
@@ -122,12 +125,7 @@ export type FontWeightValue = number;
 
 export type TypographySizes = Record<TypographyTypes, TypographyTypeVariants>;
 
-export type TypographyTypes =
-  | 'display'
-  | 'headline'
-  | 'title'
-  | 'label'
-  | 'body';
+export type TypographyTypes = 'display' | 'headline' | 'title' | 'label' | 'body';
 
 export type TypographyTypeVariants = Record<TypographyTypeSizes, FontSizeProps>;
 

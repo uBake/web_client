@@ -1,107 +1,106 @@
 import { createUseStyles } from 'react-jss';
 
-
-
-import { colors } from '../../themes/colors';
+import { getGradientWithOpacity } from '../../themes/helpers';
 import { ButtonProps } from './Button';
 
-
-export const useStyles = createUseStyles(({ palette, borderRadius }) => ({
-  button: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: 8,
-    minWidth: 40,
-    minHeight: 40,
-    border: 'none',
-    borderRadius: borderRadius.full,
-    padding: [10, 24],
-    flexDirection: ({ direction }: ButtonProps) => direction,
-    cursor: 'pointer',
-    '&[disabled]': {
-      cursor: 'not-allowed'
+export const useStyles = createUseStyles(
+  ({
+    palette: { primary, onPrimary, onSurface, primaryContainer, onPrimaryContainer, outline, surface1 },
+    borderRadius,
+    typography,
+    opacity
+  }) => ({
+    button: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      gap: 8,
+      minWidth: 40,
+      minHeight: 40,
+      border: 'none',
+      borderRadius: borderRadius.large,
+      padding: [10, 24],
+      flexDirection: ({ direction }: ButtonProps) => direction,
+      cursor: 'pointer',
+      ...typography.sizes.label.large,
+      '&[disabled]': {
+        cursor: 'not-allowed'
+      }
+    },
+    filled: {
+      background: primary,
+      color: onPrimary,
+      '&:hover': {
+        backgroundImage: getGradientWithOpacity(onPrimary, opacity[8])
+      },
+      '&:active': {
+        backgroundImage: getGradientWithOpacity(onPrimary, opacity[12])
+      },
+      '&[disabled]': {
+        background: `${onSurface}1E`,
+        color: `${onSurface}5F`
+      }
+    },
+    tonal: {
+      background: primaryContainer,
+      color: onPrimaryContainer,
+      '&:hover': {
+        background: primaryContainer,
+        backgroundImage: getGradientWithOpacity(onPrimaryContainer, opacity[8])
+      },
+      '&:active': {
+        background: primaryContainer,
+        backgroundImage: getGradientWithOpacity(onPrimaryContainer, opacity[12])
+      },
+      '&[disabled]': {
+        background: `${onSurface}1E`,
+        color: `${onSurface}5F`
+      }
+    },
+    outlined: {
+      background: 'transparent',
+      border: [1, 'solid', outline],
+      color: primary,
+      '&:hover': {
+        background: primaryContainer,
+        backgroundImage: getGradientWithOpacity(primary, opacity[8])
+      },
+      '&:active': {
+        background: primaryContainer,
+        backgroundImage: getGradientWithOpacity(primary, opacity[12])
+      },
+      '&[disabled]': {
+        background: 'transparent',
+        borderColor: `${onSurface}1E`,
+        color: `${onSurface}5F`
+      }
+    },
+    elevated: {
+      background: surface1,
+      color: primary,
+      '&:hover': {
+        backgroundImage: getGradientWithOpacity(primary, opacity[8])
+      }
+      // TODO: finish it later
+      // '&:active': {
+      //   backgroundImage: getGradientWithOpacity(primary, opacity[12]),
+      // },
+      // '&[disabled]': {
+      //   color: onSurface,
+      //   background: primaryContainer
+      // }
+    },
+    ghost: {
+      background: 'transparent',
+      color: primary,
+      '&:hover': {
+        background: primary + opacity[8]
+      },
+      '&:active': { background: primary + opacity[12] },
+      '&[disabled]': {
+        color: onSurface,
+        background: primaryContainer[100]
+      }
     }
-  },
-  filled: {
-    background: palette.primary,
-    color: palette.onPrimary,
-    '&:hover': {
-      backgroundImage: `linear-gradient(${palette.onPrimary}0D, ${palette.onPrimary}0D)`,
-      color: palette.onPrimary
-    },
-    '&:active': {
-      backgroundImage: `linear-gradient(${palette.onPrimary}1E, ${palette.onPrimary}1E)`,
-      color: palette.onPrimary
-    },
-    '&[disabled]': {
-      background: `${palette.onSurface}1E`,
-      color: `${palette.onSurface}5F`
-    }
-  },
-  tonal: {
-    background: palette.primaryContainer,
-    color: palette.onPrimaryContainer,
-    '&:hover': {
-      backgroundImage: `linear-gradient(${colors.primary[10]}14, ${colors.primary[10]}14)`,
-      color: palette.onPrimary
-    },
-    '&:active': {
-      background: palette.primary,
-      color: palette.onPrimary
-    },
-    '&[disabled]': {
-      color: `${palette.onSurface}1E`,
-      background: `${palette.onSurface}5F`
-    }
-  },
-  outlined: {
-    background: 'transparent',
-    border: [1, 'solid', palette.outline],
-    color: palette.primary,
-    '&:hover': {
-      background: palette.primary,
-      color: palette.onPrimary
-    },
-    '&:active': {
-      background: palette.primary,
-      color: palette.onPrimary
-    },
-    '&[disabled]': {
-      color: palette.onSurface,
-      background: palette.primaryContainer[100]
-    }
-  },
-  elevated: {
-    background: palette.surface1,
-    color: palette.primary,
-    '&:hover': {
-      background: palette.primary,
-      color: palette.onPrimary
-    },
-    '&:active': {
-      background: palette.primary,
-      color: palette.onPrimary
-    },
-    '&[disabled]': {
-      color: palette.onSurface,
-      background: palette.primaryContainer[100]
-    }
-  },
-  ghost: {
-    background: 'white',
-    color: palette.primary,
-    '&:hover': {
-      background: palette.primary,
-      color: palette.onPrimary
-    },
-    '&:active': {
-      background: palette.primary,
-      color: palette.onPrimary
-    },
-    '&[disabled]': {
-      color: palette.onSurface,
-      background: palette.primaryContainer[100]
-    }
-  }
-}));
+  })
+);
