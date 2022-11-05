@@ -81,11 +81,11 @@ export const useStyles = createUseStyles(
       color: primary,
       '&:hover': {
         backgroundImage: getGradientWithOpacity(primary, opacity[8])
+      },
+      '&:active': {
+        backgroundImage: getGradientWithOpacity(primary, opacity[12])
       }
       // TODO: finish it later
-      // '&:active': {
-      //   backgroundImage: getGradientWithOpacity(primary, opacity[12]),
-      // },
       // '&[disabled]': {
       //   color: onSurface,
       //   background: primaryContainer

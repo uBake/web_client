@@ -1,12 +1,12 @@
 import classNames from 'classnames';
-import { FC, PropsWithChildren } from 'react';
+import { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
 
 import { FlexDirections } from '../../types';
 import { useStyles } from './styles';
 
 type ButtonVariants = 'filled' | 'tonal' | 'outlined' | 'elevated' | 'ghost';
 
-export interface ButtonProps extends PropsWithChildren {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
   variant?: ButtonVariants;
   direction?: FlexDirections;
@@ -18,12 +18,13 @@ export const Button: FC<ButtonProps> = ({
   disabled = false,
   variant = 'filled',
   direction = 'row',
-  className
+  className,
+  ...props
 }) => {
   const styles = useStyles({ disabled, direction, variant });
 
   return (
-    <button disabled={disabled} className={classNames(styles.button, styles[variant], className)}>
+    <button disabled={disabled} className={classNames(styles.button, styles[variant], className)} {...props}>
       {children}
     </button>
   );

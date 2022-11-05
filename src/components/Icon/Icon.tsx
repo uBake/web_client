@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC, SVGProps } from 'react';
 
 import Account from './AllIcons/Account';
 import AccountPlus from './AllIcons/AccountPlus';
@@ -97,7 +97,7 @@ export type IconVariant =
   | 'Tools'
   | 'Window';
 
-type Icons = Record<IconVariant, React.FC<React.SVGProps<SVGSVGElement>>>;
+type Icons = Record<IconVariant, FC<SVGProps<SVGSVGElement>>>;
 
 export const icons: Icons = {
   Account,
@@ -149,12 +149,12 @@ export const icons: Icons = {
   Window
 };
 
-interface IconProps extends React.SVGProps<SVGSVGElement> {
+interface IconProps extends SVGProps<SVGSVGElement> {
   icon: IconVariant;
   size?: number;
 }
 
-export const Icon: React.FC<IconProps> = ({ icon, size = 24, ...props }) => {
+export const Icon: FC<IconProps> = ({ icon, size = 24, ...props }) => {
   const CurrEl = icons[icon];
 
   return <CurrEl width={size} height={size} {...props} />;
