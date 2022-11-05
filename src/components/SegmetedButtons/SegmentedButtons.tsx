@@ -1,23 +1,22 @@
 import { FC } from 'react';
 
-import { SegmentedButton, SegmentedButtonProps } from './SegmentedButton/SegmentedButton';
+import { FlexDirections } from '../../types';
+import { SegmentedButton } from './SegmentedButton/SegmentedButton';
 import { useStyles } from './styles';
 
-export const SegmentedButtons: FC<SegmentedButtonsProps> = ({ btns, direction = 'horizontal' }) => {
+export const SegmentedButtons: FC<SegmentedButtonsProps> = ({ btns, direction = 'row' }) => {
   const styles = useStyles({ direction });
 
   return (
     <div className={styles.segmentedButtons}>
       {btns.map(btn => (
-        <SegmentedButton {...btn} direction={direction} key={btn.id} />
+        <SegmentedButton btnsDirection={direction} key={btn.id} {...btn} />
       ))}
     </div>
   );
 };
 
-export type Direction = 'vertical' | 'horizontal';
-
 export interface SegmentedButtonsProps {
-  btns: SegmentedButtonProps[];
-  direction?: Direction;
+  btns: SegmentedButton[];
+  direction?: FlexDirections;
 }

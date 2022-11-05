@@ -20,6 +20,7 @@ export const useStyles = createUseStyles(
       border: 'none',
       borderRadius: borderRadius.large,
       padding: [10, 24],
+      margin: 0,
       flexDirection: ({ direction }: ButtonProps) => direction,
       cursor: 'pointer',
       ...typography.sizes.label.large,

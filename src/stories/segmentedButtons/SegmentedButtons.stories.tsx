@@ -25,7 +25,7 @@ export default {
       defaultValue: oneChild
     },
     direction: {
-      options: ['horizontal', 'vertical']
+      options: ['row', 'column']
     }
   }
 } as ComponentMeta<typeof BaseForStory>;
