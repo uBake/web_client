@@ -24,7 +24,9 @@ export const useStyles = createUseStyles(
       cursor: 'pointer',
       ...typography.sizes.label.large,
       '&[disabled]': {
-        cursor: 'not-allowed'
+        cursor: 'not-allowed',
+        background: `${onSurface}1E`,
+        color: `${onSurface}5F`
       }
     },
     filled: {
@@ -35,10 +37,6 @@ export const useStyles = createUseStyles(
       },
       '&:active': {
         backgroundImage: getGradientWithOpacity(onPrimary, opacity[12])
-      },
-      '&[disabled]': {
-        background: `${onSurface}1E`,
-        color: `${onSurface}5F`
       }
     },
     tonal: {
@@ -51,10 +49,6 @@ export const useStyles = createUseStyles(
       '&:active': {
         background: primaryContainer,
         backgroundImage: getGradientWithOpacity(onPrimaryContainer, opacity[12])
-      },
-      '&[disabled]': {
-        background: `${onSurface}1E`,
-        color: `${onSurface}5F`
       }
     },
     outlined: {
@@ -71,8 +65,7 @@ export const useStyles = createUseStyles(
       },
       '&[disabled]': {
         background: 'transparent',
-        borderColor: `${onSurface}1E`,
-        color: `${onSurface}5F`
+        borderColor: `${onSurface}1E`
       }
     },
     elevated: {
@@ -80,15 +73,10 @@ export const useStyles = createUseStyles(
       color: primary,
       '&:hover': {
         backgroundImage: getGradientWithOpacity(primary, opacity[8])
+      },
+      '&:active': {
+        backgroundImage: getGradientWithOpacity(primary, opacity[12])
       }
-      // TODO: finish it later
-      // '&:active': {
-      //   backgroundImage: getGradientWithOpacity(primary, opacity[12]),
-      // },
-      // '&[disabled]': {
-      //   color: onSurface,
-      //   background: primaryContainer
-      // }
     },
     ghost: {
       background: 'transparent',
@@ -98,8 +86,7 @@ export const useStyles = createUseStyles(
       },
       '&:active': { background: primary + opacity[12] },
       '&[disabled]': {
-        color: onSurface,
-        background: primaryContainer[100]
+        background: 'transparent'
       }
     }
   })
