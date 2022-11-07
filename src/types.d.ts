@@ -25,6 +25,8 @@ declare module 'react-jss' {
   }
 }
 
+export type FlexDirections = 'column' | 'row';
+
 export type Opacity = Record<opacityVariants, string>;
 
 export type opacityVariants = 8 | 12 | 16;
