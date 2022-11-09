@@ -1,16 +1,6 @@
-export interface Theme {
-  name: 'Dark' | 'Light';
-  palette: Palette;
-  shadows: Shadows;
-  typography: Typography;
-  zIndex: ZIndex;
-  borderRadius: BorderRadius;
-  border: Border;
-  aspectRatio: AspectRatio;
-  opacity: Opacity;
-}
+import { ThemeModes } from './themes';
 
-declare module 'react-jss' {
+declare global {
   namespace Jss {
     export interface Theme {
       palette: Palette;
@@ -21,6 +11,7 @@ declare module 'react-jss' {
       border: Border;
       aspectRatio: AspectRatio;
       opacity: Opacity;
+      name: string;
     }
   }
 }

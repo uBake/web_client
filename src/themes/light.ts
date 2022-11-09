@@ -1,8 +1,9 @@
-import { Theme } from '../types';
+import { DefaultTheme } from 'react-jss';
+
 import { colors } from './colors';
 import { defaultTheme } from './default';
 
-export const lightTheme: Theme = {
+export const lightTheme: DefaultTheme = {
   ...defaultTheme,
   palette: {
     primary: colors.primary[40],
