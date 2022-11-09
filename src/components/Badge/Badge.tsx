@@ -8,7 +8,7 @@ export type VerticalAligns = 'top' | 'bottom';
 export type HorizontalAlign = 'left' | 'right';
 
 export interface BadgeProps extends PropsWithChildren {
-  count?: number;
+  count?: number | string;
   vPos?: VerticalAligns;
   hPos?: HorizontalAlign;
 }

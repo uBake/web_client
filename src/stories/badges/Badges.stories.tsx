@@ -7,22 +7,23 @@ export default {
   title: 'Components',
   component: Badge,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+	args: {
+		count: undefined,
+		hPos: 'right',
+		vPos: 'top'
+	},
   argTypes: {
     count: {
       options: [undefined, 5, '99+'],
-      defaultValue: undefined
+			control: 'radio'
     },
     hPos: {
       options: ['right', 'left'],
-      control: {
-        type: 'select'
-      }
+			control: 'radio'
     },
     vPos: {
       options: ['top', 'bottom'],
-      control: {
-        type: 'select'
-      }
+			control: 'radio'
     }
   }
 } as ComponentMeta<typeof Badge>;
