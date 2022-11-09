@@ -9,7 +9,11 @@ export const useStyles = createUseStyles(({ palette, borderRadius, typography })
     position: 'absolute'
   },
   tooltip: {
+    minWidth: 28,
     position: 'relative',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     padding: 6,
     background: palette.primary,
     color: palette.onPrimary,
@@ -18,23 +22,46 @@ export const useStyles = createUseStyles(({ palette, borderRadius, typography })
   },
   tip: {
     position: 'absolute',
-    width: 0,
-    height: 0,
-    borderLeft: '8px solid transparent',
-    borderRight: '8px solid transparent',
-    borderTop: `8px solid ${palette.onBackground}`,
-		zIndex: 0
+    fill: palette.primary
   },
   top: {
-    top: 'calc(-100%)',
-		tooltip: {
-			padding: 20,
-			tip: {
-				bottom: 100
-			}
-		}
+    bottom: '100%',
+    left: '50%',
+    transform: 'translate(-50%, -4px)',
+    '&>span>svg': {
+      top: '100%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)'
+    }
   },
-  bottom: {},
-  left: {},
-  right: {}
+  bottom: {
+    top: '100%',
+    left: '50%',
+    transform: 'translate(-50%, 4px)',
+    '&>span>svg': {
+      top: 0,
+      left: '50%',
+      transform: 'translate(-50%, -50%) rotate(180deg)'
+    }
+  },
+  left: {
+    right: '100%',
+    top: '50%',
+    transform: 'translate(-4px, -50%)',
+    '&>span>svg': {
+      top: '50%',
+      left: '100%',
+      transform: 'translate(-50%, -50%) rotate(270deg)'
+    }
+  },
+  right: {
+    left: '100%',
+    top: '50%',
+    transform: 'translate(4px, -50%)',
+    '&>span>svg': {
+      top: '50%',
+      right: '100%',
+      transform: 'translate(50%, -50%) rotate(90deg)'
+    }
+  }
 }));
