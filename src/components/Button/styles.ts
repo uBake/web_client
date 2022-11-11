@@ -5,7 +5,15 @@ import { ButtonProps } from './Button';
 
 export const useStyles = createUseStyles(
   ({
-    palette: { primary, onPrimary, onSurface, primaryContainer, onPrimaryContainer, outline, surface1 },
+    palette: {
+      primary,
+      onPrimary,
+      onSurface,
+      primaryContainer,
+      onPrimaryContainer,
+      outline,
+      surface1
+    },
     borderRadius,
     typography,
     opacity
@@ -73,7 +81,8 @@ export const useStyles = createUseStyles(
     elevated: {
       background: surface1,
       color: primary,
-      filter: 'drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.039)) drop-shadow(0px 0.5px 1.5px rgba(0, 0, 0, 0.19))',
+      filter:
+        'drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.039)) drop-shadow(0px 0.5px 1.5px rgba(0, 0, 0, 0.19))',
       '&:hover': {
         backgroundImage: getGradientWithOpacity(primary, opacity[8])
       },

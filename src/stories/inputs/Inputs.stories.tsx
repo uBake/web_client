@@ -8,10 +8,10 @@ export default {
   component: Input,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   args: {
-		placeholder: 'Label',
-		advantageText: 'Supporting text',
-		textLimit: 9
-	}
+    placeholder: 'Label',
+    advantageText: 'Supporting text',
+    textLimit: 9
+  }
 } as ComponentMeta<typeof Input>;
 
 export const TextInput = {

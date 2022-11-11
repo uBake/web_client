@@ -1,9 +1,6 @@
 import { createUseStyles } from 'react-jss';
 
-
-
 import { BadgeProps } from './Badge';
-
 
 export const useStyles = createUseStyles(
   ({ palette, borderRadius, aspectRatio, typography }) => ({

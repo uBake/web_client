@@ -1,14 +1,19 @@
 {
-	"extends": ["next/core-web-vitals", "@spotify/eslint-config-base", "@spotify/eslint-config-typescript", "prettier"],
-	"parserOptions": {
-		"sort-imports": [
-			"error",
-			{
-				"ignoreCase": false,
-				"ignoreDeclarationSort": true,
-				"ignoreMemberSort": false,
-				"memberSyntaxSortOrder": ["none", "all", "single", "multiple"]
-			}
-		]
-	}
+  "extends": [
+    "next/core-web-vitals",
+    "@spotify/eslint-config-base",
+    "@spotify/eslint-config-typescript",
+    "prettier"
+  ],
+  "parserOptions": {
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": false,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "single", "multiple"]
+      }
+    ]
+  }
 }

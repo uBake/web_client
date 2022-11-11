@@ -9,7 +9,12 @@ import { zIndex } from './zIndex';
 
 export const defaultTheme: Pick<
   DefaultTheme,
-  'shadows' | 'zIndex' | 'borderRadius' | 'aspectRatio' | 'typography' | 'opacity'
+  | 'shadows'
+  | 'zIndex'
+  | 'borderRadius'
+  | 'aspectRatio'
+  | 'typography'
+  | 'opacity'
 > = {
   shadows,
   zIndex,

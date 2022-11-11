@@ -1,6 +1,6 @@
 import { withThemes } from '@react-theming/storybook-addon';
 import React from 'react';
-import { SheetsRegistry, ThemeProvider, jss } from 'react-jss';
+import { jss, SheetsRegistry, ThemeProvider } from 'react-jss';
 
 import { ThemeModes, themes } from '../src/themes';
 import { globalStyles } from '../src/themes/global';
@@ -27,7 +27,11 @@ const providerFn = ({ theme, children }) => {
   );
 };
 
-export const themeDecorator = withThemes(ThemeProvider, [themes[ThemeModes.light], themes[ThemeModes.dark]], {
-  providerFn
-  // onThemeSwitch
-});
+export const themeDecorator = withThemes(
+  ThemeProvider,
+  [themes[ThemeModes.light], themes[ThemeModes.dark]],
+  {
+    providerFn
+    // onThemeSwitch
+  }
+);

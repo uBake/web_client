@@ -1,3 +1,12 @@
 {
-  "cSpell.words": ["ubake"]
+  "cSpell.words": ["ubake"],
+  "typescriptHero.imports.disableImportsSorting": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true,
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "typescriptHero.imports.organizeOnSave": true
 }

@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { ChangeEventHandler, FC, KeyboardEventHandler, useState } from 'react';
+import { ChangeEventHandler, FC, useState } from 'react';
 
 import { InputProps } from '../Input';
 import { useStyles } from './styles';
@@ -28,7 +28,10 @@ export const TextInput: FC<TextInputProps> = ({
 
     const targetValue = e.target.value;
     if (textLimit) {
-      if (currValue.length < textLimit || e.nativeEvent.inputType === 'deleteContentBackward') {
+      if (
+        currValue.length < textLimit ||
+        e.nativeEvent.inputType === 'deleteContentBackward'
+      ) {
         setCurrValue(targetValue);
         onChange(e);
       }
@@ -51,7 +54,9 @@ export const TextInput: FC<TextInputProps> = ({
         <span className={styles.placeholder}>{placeholder}</span>
       </div>
       <div className={styles.advantages}>
-        {advantageText && <span className={styles.supportingText}>{advantageText}</span>}
+        {advantageText && (
+          <span className={styles.supportingText}>{advantageText}</span>
+        )}
         {textLimit && (
           <span className={styles.limits}>
             {currValue.length}/{textLimit}

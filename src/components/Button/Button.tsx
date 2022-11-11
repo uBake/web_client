@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
+import { ButtonHTMLAttributes, FC } from 'react';
 
 import { FlexDirections } from '../../types';
 import { useStyles } from './styles';
@@ -24,7 +24,11 @@ export const Button: FC<ButtonProps> = ({
   const styles = useStyles({ disabled, direction, variant });
 
   return (
-    <button disabled={disabled} className={classNames(styles.button, styles[variant], className)} {...props}>
+    <button
+      disabled={disabled}
+      className={classNames(styles.button, styles[variant], className)}
+      {...props}
+    >
       {children}
     </button>
   );

@@ -14,7 +14,7 @@ export default {
   argTypes: {
     disabled: {
       options: [true, false],
-			control: 'radio'
+      control: 'radio'
     }
   }
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes

@@ -1,17 +1,30 @@
+import { DefaultTheme } from 'react-jss';
+
 import { ThemeModes, themes } from '../../themes';
-import { PaletteColorNames, Theme } from '../../types';
+import { PaletteColorNames } from '../../types';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Theme/Palette',
-  argTypes: {}
+  argTypes: {
+    theme: {
+      options: [ThemeModes.light, ThemeModes.dark],
+      mapping: themes,
+      labels: {
+        [ThemeModes.dark]: themes[ThemeModes.dark],
+        [ThemeModes.light]: themes[ThemeModes.light]
+      },
+      defaultValue: ThemeModes.light,
+      control: 'radio'
+    }
+  }
 };
 
-interface TemplateProps {
-  theme: Theme;
+interface PaletteTemplateProps {
+  theme: DefaultTheme;
 }
 
-const Template = ({ theme }: TemplateProps) => (
+export const Palette = ({ theme }: PaletteTemplateProps) => (
   <div
     style={{
       display: 'grid',
@@ -39,10 +52,3 @@ const Template = ({ theme }: TemplateProps) => (
     ))}
   </div>
 );
-
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-export const Light = Template.bind({});
-Light.args = { theme: themes[ThemeModes.light] };
-
-export const Dark = Template.bind({});
-Dark.args = { theme: themes[ThemeModes.dark] };

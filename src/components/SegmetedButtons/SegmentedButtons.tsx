@@ -4,7 +4,10 @@ import { FlexDirections } from '../../types';
 import { SegmentedButton } from './SegmentedButton/SegmentedButton';
 import { useStyles } from './styles';
 
-export const SegmentedButtons: FC<SegmentedButtonsProps> = ({ btns, direction = 'row' }) => {
+export const SegmentedButtons: FC<SegmentedButtonsProps> = ({
+  btns,
+  direction = 'row'
+}) => {
   const styles = useStyles({ direction });
 
   return (

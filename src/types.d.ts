@@ -1,5 +1,3 @@
-import { ThemeModes } from './themes';
-
 declare global {
   namespace Jss {
     export interface Theme {
@@ -118,7 +116,12 @@ export type FontWeightValue = number;
 
 export type TypographySizes = Record<TypographyTypes, TypographyTypeVariants>;
 
-export type TypographyTypes = 'display' | 'headline' | 'title' | 'label' | 'body';
+export type TypographyTypes =
+  | 'display'
+  | 'headline'
+  | 'title'
+  | 'label'
+  | 'body';
 
 export type TypographyTypeVariants = Record<TypographyTypeSizes, FontSizeProps>;
 

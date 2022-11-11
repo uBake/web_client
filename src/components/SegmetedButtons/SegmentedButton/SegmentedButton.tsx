@@ -4,7 +4,13 @@ import { FlexDirections } from '../../../types';
 import { Button } from '../../Button/Button';
 import { useStyles } from './styles';
 
-export const SegmentedButton: FC<SegmentedButtonProps> = ({ btnsDirection, label, onClick , direction, selected }) => {
+export const SegmentedButton: FC<SegmentedButtonProps> = ({
+  btnsDirection,
+  label,
+  onClick,
+  direction,
+  selected
+}) => {
   const styles = useStyles({ btnsDirection });
   return (
     <Button variant='outlined' className={styles.segmentedButton}>

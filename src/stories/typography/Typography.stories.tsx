@@ -9,10 +9,7 @@ export default {
   argTypes: {
     weight: {
       options: [400, 500, 700],
-      // defaultValue: 400,
-      control: {
-        type: 'select'
-      }
+      control: 'radio'
     }
   }
 };

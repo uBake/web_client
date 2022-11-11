@@ -4,15 +4,36 @@ import { SegmentedButtonProps } from '../../components/SegmetedButtons/Segmented
 import { SegmentedButtons as BaseForStory } from '../../components/SegmetedButtons/SegmentedButtons';
 
 const oneChild: SegmentedButtonProps[] = [
-  { id: 1, selected: false, label: 'Btn', onClick: () => {}, direction: 'row', btnsDirection: 'row' }
+  {
+    id: 1,
+    selected: false,
+    label: 'Btn',
+    onClick: () => {},
+    direction: 'row',
+    btnsDirection: 'row'
+  }
 ];
 const twoChildren: SegmentedButtonProps[] = [
   ...oneChild,
-  { id: 2, selected: false, label: 'Btn 2', onClick: () => {}, direction: 'row', btnsDirection: 'row' }
+  {
+    id: 2,
+    selected: false,
+    label: 'Btn 2',
+    onClick: () => {},
+    direction: 'row',
+    btnsDirection: 'row'
+  }
 ];
 const someChildren: SegmentedButtonProps[] = [
   ...twoChildren,
-  { id: 3, selected: false, label: 'Btn 3', onClick: () => {}, direction: 'row', btnsDirection: 'row' }
+  {
+    id: 3,
+    selected: false,
+    label: 'Btn 3',
+    onClick: () => {},
+    direction: 'row',
+    btnsDirection: 'row'
+  }
 ];
 
 const variants = { oneChild, twoChildren, someChildren };
@@ -45,4 +66,6 @@ export default {
 } as ComponentMeta<typeof BaseForStory>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-export const SegmentedButtons: ComponentStory<typeof BaseForStory> = props => <BaseForStory {...props} />;
+export const SegmentedButtons: ComponentStory<typeof BaseForStory> = props => (
+  <BaseForStory {...props} />
+);

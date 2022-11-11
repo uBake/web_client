@@ -1,12 +1,5 @@
-import Document, {
-  DocumentContext,
-  Head,
-  Html,
-  Main,
-  NextScript
-} from 'next/document';
-import React from 'react';
-import { JssProvider, SheetsRegistry, createGenerateId, jss } from 'react-jss';
+import Document, { DocumentContext, Head, Html, Main, NextScript } from 'next/document';
+import { createGenerateId, jss, JssProvider, SheetsRegistry } from 'react-jss';
 
 import { globalStyles } from '../src/themes/global';
 
@@ -31,7 +24,7 @@ class MyDocument extends Document {
       styles: (
         <>
           {initialProps.styles}
-          <style id="server-side-styles">{registry.toString()}</style>
+          <style id='server-side-styles'>{registry.toString()}</style>
         </>
       )
     };
@@ -41,13 +34,16 @@ class MyDocument extends Document {
       <Html>
         <Head>
           {/* <link rel="icon" href="link to favicon" /> */}
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link rel='preconnect' href='https://fonts.googleapis.com' />
+          <link rel='preconnect' href='https://fonts.gstatic.com' />
           <link
-            href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap"
-            rel="stylesheet"
+            href='https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap'
+            rel='stylesheet'
           ></link>
-					<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+          <link
+            href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined'
+            rel='stylesheet'
+          />
         </Head>
         <body>
           <Main />

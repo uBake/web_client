@@ -1,4 +1,4 @@
-import { Draft, PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { createSlice, Draft, PayloadAction } from '@reduxjs/toolkit';
 
 export interface TestState {
   test: string;
