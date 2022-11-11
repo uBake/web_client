@@ -16,7 +16,9 @@ export default {
 } as ComponentMeta<typeof Input>;
 
 export const TextInput = {
-  args: {}
+  args: {
+    value: ''
+  }
 };
 
 export const RadioButton = {

@@ -18,16 +18,17 @@ export const TextInput: FC<TextInputProps> = ({
   textLimit,
   onChange = () => {},
   type = 'text',
+  value = '',
   ...props
 }) => {
-  const styles = useStyles();
-  const [currValue, setCurrValue] = useState('');
+  const [currValue, setCurrValue] = useState(value);
+  const styles = useStyles({ currValue });
 
   const changeHandler: ChangeEventHandler<HTMLInputElement> = e => {
     const targetValue = e.target.value;
     if (textLimit) {
       if (
-        currValue.length < textLimit ||
+        currValue.toString().length < textLimit ||
         e.nativeEvent.inputType === 'deleteContentBackward'
       ) {
         setCurrValue(targetValue);
@@ -56,7 +57,7 @@ export const TextInput: FC<TextInputProps> = ({
         />
         <span className={styles.placeholder}>
           {placeholder}
-          <hr />
+          <hr className={styles.placeholderBg} />
         </span>
       </div>
       <div className={styles.advantages}>
@@ -67,7 +68,7 @@ export const TextInput: FC<TextInputProps> = ({
         )}
         {textLimit && (
           <span className={styles.limits}>
-            {currValue.length}/{textLimit}
+            {currValue.toString().length}/{textLimit}
           </span>
         )}
       </div>
