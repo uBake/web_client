@@ -40,13 +40,18 @@ export const TextInput: FC<TextInputProps> = ({
   };
 
   return (
-    <div className={styles.wrapper}>
+    <div
+      className={classNames([
+        styles.wrapper,
+        { [styles.error]: Boolean(error) }
+      ])}
+    >
       <div className={styles.body}>
         <input
           type={type}
           value={currValue}
           onChange={changeHandler}
-          className={classNames(styles.textInput, className)}
+          className={classNames([styles.textInput, className])}
           {...props}
         />
         <span className={styles.placeholder}>
@@ -55,8 +60,10 @@ export const TextInput: FC<TextInputProps> = ({
         </span>
       </div>
       <div className={styles.advantages}>
-        {advantageText && (
-          <span className={styles.supportingText}>{advantageText}</span>
+        {(advantageText || error) && (
+          <span className={styles.supportingText}>
+            {error ? error : advantageText}
+          </span>
         )}
         {textLimit && (
           <span className={styles.limits}>

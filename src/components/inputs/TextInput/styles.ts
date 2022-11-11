@@ -6,22 +6,33 @@ export const useStyles = createUseStyles(
       width: 'fit-content',
       color: palette.onSurfaceVariant
     },
+    error: {
+      color: palette.error,
+      '& input': {
+        borderWidth: 2,
+        borderColor: palette.error
+      }
+    },
     body: {
       position: 'relative',
       ...typography.sizes.title.medium,
       ...typography.weights[700]
     },
     textInput: {
+      boxSizing: 'border-box',
       borderRadius: borderRadius.large,
       padding: 16,
       minWidth: 288,
+      height: 56,
       border: [1, 'solid', palette.outline],
       font: 'inherit',
       background: palette.surface,
+      color: palette.onSurfaceVariant,
       '&:focus': {
         outline: 'none',
+        borderWidth: 2,
         '&+span': {
-          top: 2,
+          top: 0,
           left: 12,
           padding: [0, 4],
           ...typography.sizes.body.small,
@@ -66,9 +77,12 @@ export const useStyles = createUseStyles(
       gap: 16,
       ...typography.sizes.body.small
     },
-    supportingText: {},
+    supportingText: {
+      wordBreak: 'break-all'
+    },
     limits: {
-      wordWrap: 'none'
+      marginLeft: 'auto',
+      wordBreak: 'keep-all'
     }
   })
 );

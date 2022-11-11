@@ -10,6 +10,7 @@ export default {
   args: {
     placeholder: 'Label',
     advantageText: 'Supporting text',
+    error: '',
     textLimit: 9
   }
 } as ComponentMeta<typeof Input>;
