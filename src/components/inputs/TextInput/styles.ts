@@ -17,7 +17,22 @@ export const useStyles = createUseStyles(
       minWidth: 288,
       border: [1, 'solid', palette.outline],
       font: 'inherit',
-      background: palette.surface
+      background: palette.surface,
+      '&:focus': {
+        outline: 'none',
+        '&+span': {
+          top: 2,
+          left: 12,
+          padding: [0, 4],
+          ...typography.sizes.body.small,
+          '& hr': {
+            width: '100%',
+            height: 3,
+            background: palette.surface,
+            borderTopLeftRadius: '20%'
+          }
+        }
+      }
     },
     placeholder: {
       position: 'absolute',
@@ -27,7 +42,20 @@ export const useStyles = createUseStyles(
       justifyContent: 'center',
       alignItems: 'center',
       gap: 16,
-      transform: 'translateY(-50%)'
+      transform: 'translateY(-50%)',
+      pointerEvents: 'none',
+      '& hr': {
+        position: 'absolute',
+        top: '50%',
+        left: 0,
+        margin: 0,
+        zIndex: -1,
+        width: 0,
+        height: 0,
+        background: 'transparent',
+        border: 'none',
+        transform: 'translateY(-5%)'
+      }
     },
     advantages: {
       maxWidth: 288,

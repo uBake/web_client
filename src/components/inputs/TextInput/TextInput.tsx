@@ -24,8 +24,6 @@ export const TextInput: FC<TextInputProps> = ({
   const [currValue, setCurrValue] = useState('');
 
   const changeHandler: ChangeEventHandler<HTMLInputElement> = e => {
-    console.log(e);
-
     const targetValue = e.target.value;
     if (textLimit) {
       if (
@@ -51,7 +49,10 @@ export const TextInput: FC<TextInputProps> = ({
           className={classNames(styles.textInput, className)}
           {...props}
         />
-        <span className={styles.placeholder}>{placeholder}</span>
+        <span className={styles.placeholder}>
+          {placeholder}
+          <hr />
+        </span>
       </div>
       <div className={styles.advantages}>
         {advantageText && (
