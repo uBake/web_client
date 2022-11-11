@@ -14,11 +14,13 @@ export const TextInput: FC<TextInputProps> = ({
   advantageText,
   className,
   error,
+  label,
   placeholder,
   textLimit,
   onChange = () => {},
   type = 'text',
   value = '',
+  disabled,
   ...props
 }) => {
   const [currValue, setCurrValue] = useState(value);
@@ -26,14 +28,10 @@ export const TextInput: FC<TextInputProps> = ({
 
   const changeHandler: ChangeEventHandler<HTMLInputElement> = e => {
     const targetValue = e.target.value;
-    if (textLimit) {
-      if (
-        currValue.toString().length < textLimit ||
-        e.nativeEvent.inputType === 'deleteContentBackward'
-      ) {
+    if (textLimit && (currValue.toString().length < textLimit ||
+        e.nativeEvent.inputType === 'deleteContentBackward')) {
         setCurrValue(targetValue);
         onChange(e);
-      }
     } else {
       setCurrValue(targetValue);
       onChange(e);
@@ -44,7 +42,8 @@ export const TextInput: FC<TextInputProps> = ({
     <div
       className={classNames([
         styles.wrapper,
-        { [styles.error]: Boolean(error) }
+        { [styles.error]: Boolean(error) },
+        { [styles.disabled]: Boolean(disabled) }
       ])}
     >
       <div className={styles.body}>
@@ -53,17 +52,18 @@ export const TextInput: FC<TextInputProps> = ({
           value={currValue}
           onChange={changeHandler}
           className={classNames([styles.textInput, className])}
+          disabled={disabled}
           {...props}
         />
-        <span className={styles.placeholder}>
-          {placeholder}
-          <hr className={styles.placeholderBg} />
+        <span className={styles.label}>
+          {label}
+          <hr className={styles.labelBg} />
         </span>
       </div>
       <div className={styles.advantages}>
         {(advantageText || error) && (
           <span className={styles.supportingText}>
-            {error ? error : advantageText}
+            {error && typeof error === 'string' ? error : advantageText}
           </span>
         )}
         {textLimit && (

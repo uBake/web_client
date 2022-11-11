@@ -18,7 +18,7 @@ export type FlexDirections = 'column' | 'row';
 
 export type Opacity = Record<opacityVariants, string>;
 
-export type opacityVariants = 8 | 12 | 16;
+export type opacityVariants = 8 | 12 | 16 | 38;
 
 export type Shadows = string[];
 

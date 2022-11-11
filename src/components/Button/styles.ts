@@ -34,8 +34,8 @@ export const useStyles = createUseStyles(
       ...typography.sizes.label.large,
       '&[disabled]': {
         cursor: 'not-allowed',
-        background: `${onSurface}1E`,
-        color: `${onSurface}5F`,
+        background: onSurface + opacity[12],
+        color: onSurface + opacity[38],
         filter: 'none'
       }
     },
@@ -75,7 +75,7 @@ export const useStyles = createUseStyles(
       },
       '&[disabled]': {
         background: 'transparent',
-        borderColor: `${onSurface}1E`
+        borderColor: onSurface + opacity[12]
       }
     },
     elevated: {
