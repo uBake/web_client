@@ -7,18 +7,13 @@ export default {
   title: 'Components/Inputs',
   component: Input,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  args: {
-    placeholder: 'Label',
-    disabled: false
-  }
+  args: { label: 'Label', disabled: false }
 } as ComponentMeta<typeof Input>;
 
 export const Checkbox = {
   args: {
     type: 'checkbox',
-    advantageText: 'Supporting text',
-    error: '',
-    textLimit: 9
+    checked: false
   }
 };
 
@@ -30,6 +25,9 @@ export const RadioButton = {
 
 export const TextInput = {
   args: {
-    value: ''
+    value: '',
+    advantageText: 'Supporting text',
+    error: '',
+    textLimit: 9
   }
 };

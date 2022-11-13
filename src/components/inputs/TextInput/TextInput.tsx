@@ -28,10 +28,14 @@ export const TextInput: FC<TextInputProps> = ({
 
   const changeHandler: ChangeEventHandler<HTMLInputElement> = e => {
     const targetValue = e.target.value;
-    if (textLimit && (currValue.toString().length < textLimit ||
-        e.nativeEvent.inputType === 'deleteContentBackward')) {
+    if (textLimit) {
+      if (
+        currValue.toString().length < textLimit ||
+        (e.nativeEvent as any).inputType === 'deleteContentBackward'
+      ) {
         setCurrValue(targetValue);
         onChange(e);
+      }
     } else {
       setCurrValue(targetValue);
       onChange(e);
