@@ -11,7 +11,6 @@ const SvgComponent: React.FC<React.SVGProps<SVGSVGElement>> = props => (
       fillRule='evenodd'
       clipRule='evenodd'
       d='M3 8V6H21V8H3ZM3 13H21V11H3V13ZM3 18H21V16H3V18Z'
-      fill='#201A1C'
     />
   </svg>
 );

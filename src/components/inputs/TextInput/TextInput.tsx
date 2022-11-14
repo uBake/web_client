@@ -7,7 +7,6 @@ import { useStyles } from './styles';
 interface TextInputProps extends InputProps {
   advantageText?: string;
   textLimit?: number;
-  error?: string;
 }
 
 export const TextInput: FC<TextInputProps> = ({

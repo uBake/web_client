@@ -43,7 +43,6 @@ import Search from './AllIcons/Search';
 import Settings from './AllIcons/Settings';
 import Settings2 from './AllIcons/Settings2';
 import Settings3 from './AllIcons/Settings3';
-import Settings4 from './AllIcons/Settings4';
 import Statistics from './AllIcons/Statistics';
 import Tools from './AllIcons/Tools';
 import Window from './AllIcons/Window';
@@ -91,7 +90,6 @@ export type IconVariant =
   | 'Search'
   | 'Settings2'
   | 'Settings3'
-  | 'Settings4'
   | 'Settings'
   | 'Statistics'
   | 'Tools'
@@ -142,7 +140,6 @@ export const icons: Icons = {
   Search,
   Settings2,
   Settings3,
-  Settings4,
   Settings,
   Statistics,
   Tools,

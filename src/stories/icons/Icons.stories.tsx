@@ -25,7 +25,7 @@ export const Icons = () => (
             gap: 8
           }}
         >
-          <Icon size={50} icon={icon as IconVariant} />
+          <Icon size={50} icon={icon as IconVariant} fill='orange' />
           <span style={{ textAlign: 'center' }}>{icon}</span>
         </div>
       </div>

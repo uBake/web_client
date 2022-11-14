@@ -1,43 +1,53 @@
 import classNames from 'classnames';
-import { FC, useState } from 'react';
+import { ChangeEvent, FC, useState } from 'react';
 
+import { Icon } from '../../Icon/Icon';
 import { InputProps } from '../Input';
 import { useStyles } from './styles';
 
 export const CheckBox: FC<InputProps> = ({
   checked: isChecked,
-  className,
   disabled,
   label,
   id = 'checkbox',
+  error = '',
+  onChange,
+  className,
   ...props
 }) => {
-  const [checked, setChecked] = useState(isChecked);
   const styles = useStyles({ disabled });
+  const [checked, setChecked] = useState(isChecked);
+  console.log(error);
 
-  const clickHandler = () => {
-    !disabled && setChecked(!checked);
+  const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    if (disabled) return;
+
+    setChecked(prev => !prev);
+    onChange && onChange(e);
   };
 
   return (
-    <div
-      className={classNames(styles.wrapper, { [styles.disabled]: disabled })}
-    >
-      <div
-        className={classNames([styles.check, { [styles.checked]: checked }])}
-        onClick={clickHandler}
+    <label htmlFor={id} className={classNames([styles.wrapper, className])}>
+      <a
+        data-checked={checked}
+        data-disabled={disabled}
+        data-error={error && error.length > 0}
+        className={styles.checkbox}
       >
+        <div></div>
+        <Icon icon='Done' className={styles.check} />
         <input
           checked={checked}
           id={id}
           disabled={disabled}
-          className={classNames(styles.checkbox, className)}
+          className={styles.input}
+          onChange={changeHandler}
           {...props}
         />
-      </div>
-      <label htmlFor={id} className={styles.label}>
+      </a>
+      <span data-disabled={disabled} className={styles.label}>
         {label}
-      </label>
-    </div>
+      </span>
+    </label>
   );
 };
