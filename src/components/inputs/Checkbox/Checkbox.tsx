@@ -7,7 +7,7 @@ import { useStyles } from './styles';
 
 export const CheckBox: FC<InputProps> = ({
   checked,
-  disabled,
+  disabled = false,
   label,
   id = 'checkbox',
   error = '',

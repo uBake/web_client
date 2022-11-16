@@ -32,7 +32,8 @@ export const useStyles = createUseStyles(
       '&>div': {
         position: 'absolute',
         width: 0,
-        height: 0
+        height: 0,
+        zIndex: 0
       },
       '&[data-checked=true]': {
         borderColor: palette.primary,

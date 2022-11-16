@@ -7,9 +7,8 @@ export const useStyles = createUseStyles(
       display: 'flex',
       justifyContent: 'flex-start',
       alignItems: 'center',
-      padding: [14, 12, 14, 14],
       width: 'fit-content',
-      gap: 12
+      gap: 14
     },
     input: {
       pointerEvents: 'none',
