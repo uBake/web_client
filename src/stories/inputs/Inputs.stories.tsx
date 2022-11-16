@@ -19,15 +19,18 @@ export const Checkbox = {
 
 export const RadioButton = {
   args: {
-    type: 'radio'
+    type: 'radio',
+    checked: false
   }
 };
 
 export const TextInput = {
   args: {
     value: '',
+    onChange: () => console.log('hi'),
     advantageText: 'Supporting text',
     error: '',
-    textLimit: 9
+    textLimit: 9,
+    label: 'Label'
   }
 };

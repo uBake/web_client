@@ -5,14 +5,15 @@ import { InputProps } from './../Input';
 type StyleProp = Partial<InputProps>;
 
 export const useStyles = createUseStyles(
-  ({ opacity, palette, borderRadius }) => ({
+  ({ opacity, palette, borderRadius, typography }) => ({
     wrapper: {
       position: 'relative',
       display: 'flex',
       justifyContent: 'flex-start',
       alignItems: 'center',
       gap: 15,
-      color: palette.onSurface
+      color: palette.onSurface,
+      width: 'fit-content'
     },
     checkbox: {
       position: 'relative',
@@ -24,8 +25,7 @@ export const useStyles = createUseStyles(
         width: 2,
         style: 'solid'
       },
-      cursor: ({ disabled }: StyleProp) =>
-        disabled ? 'not-allowed' : 'pointer',
+      cursor: 'pointer',
       borderRadius: borderRadius.extraSmall / 2,
       width: 18,
       height: 18,
@@ -49,6 +49,7 @@ export const useStyles = createUseStyles(
       },
       '&[data-disabled=true]': {
         borderColor: palette.onSurfaceVariant + opacity[12],
+        cursor: 'not-allowed',
         '&[data-checked=true]': {
           borderColor: palette.onSurfaceVariant + opacity[12],
           background: palette.onSurfaceVariant + opacity[12],
@@ -58,7 +59,7 @@ export const useStyles = createUseStyles(
           }
         }
       },
-      '&[data-disabled=false]:hover>div': {
+      '&[data-disabled=false]:not(:active):hover>div': {
         width: 40,
         height: 40,
         borderRadius: borderRadius.full,
@@ -76,9 +77,12 @@ export const useStyles = createUseStyles(
       height: '100%'
     },
     label: {
-      cursor: ({ disabled }: StyleProp) =>
-        disabled ? 'not-allowed' : 'pointer',
-      '&[data-disabled=true]': { color: palette.onSurfaceVariant + opacity[38] }
+      cursor: 'pointer',
+      '&[data-disabled=true]': {
+        color: palette.onSurfaceVariant + opacity[38],
+        cursor: 'not-allowed'
+      },
+      ...typography.sizes.body.medium
     },
     input: {
       width: 0,

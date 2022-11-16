@@ -1,12 +1,18 @@
+import { ChangeEvent } from 'react';
+
 import { Container } from '../src/components/Container/Container';
-import { Icon } from '../src/components/Icon/Icon';
+import { Input } from '../src/components/inputs/Input';
 
 import type { NextPage } from 'next';
-
 const Home: NextPage = () => {
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+    console.log(e);
+  };
   return (
     <Container>
-      <Icon icon='Account' size={200} />
+      <Input textLimit={9} value='' onChange={onChange} />
+      <Input type='checkbox' checked={false} onChange={onChange} />
+      <Input type='radio' checked={false} onChange={onChange} />
     </Container>
   );
 };

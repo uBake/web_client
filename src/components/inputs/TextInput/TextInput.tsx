@@ -1,13 +1,10 @@
 import classNames from 'classnames';
-import { ChangeEventHandler, FC, useState } from 'react';
+import { ChangeEvent, ChangeEventHandler, FC, useState } from 'react';
 
 import { InputProps } from '../Input';
 import { useStyles } from './styles';
 
-interface TextInputProps extends InputProps {
-  advantageText?: string;
-  textLimit?: number;
-}
+export interface TextInputProps extends InputProps {}
 
 export const TextInput: FC<TextInputProps> = ({
   advantageText,
@@ -16,27 +13,27 @@ export const TextInput: FC<TextInputProps> = ({
   label,
   placeholder,
   textLimit,
-  onChange = () => {},
+  onChange = (e: ChangeEvent<HTMLInputElement>) => {},
   type = 'text',
   value = '',
   disabled,
   ...props
 }) => {
   const [currValue, setCurrValue] = useState(value);
-  const styles = useStyles({ currValue });
+  const styles = useStyles({ value: currValue });
 
   const changeHandler: ChangeEventHandler<HTMLInputElement> = e => {
-    const targetValue = e.target.value;
+    e.preventDefault();
     if (textLimit) {
       if (
         currValue.toString().length < textLimit ||
         (e.nativeEvent as any).inputType === 'deleteContentBackward'
       ) {
-        setCurrValue(targetValue);
+        setCurrValue(e.target.value);
         onChange(e);
       }
     } else {
-      setCurrValue(targetValue);
+      setCurrValue(e.target.value);
       onChange(e);
     }
   };
@@ -58,10 +55,12 @@ export const TextInput: FC<TextInputProps> = ({
           disabled={disabled}
           {...props}
         />
-        <span className={styles.label}>
-          {label}
-          <hr className={styles.labelBg} />
-        </span>
+        {label && (
+          <label className={styles.label}>
+            {label}
+            <hr className={styles.labelBg} />
+          </label>
+        )}
       </div>
       <div className={styles.advantages}>
         {(advantageText || error) && (

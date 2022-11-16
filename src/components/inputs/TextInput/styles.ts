@@ -1,7 +1,7 @@
 import { createUseStyles } from 'react-jss';
 
 interface StyleProps {
-  currValue: string | ReadonlyArray<string> | number;
+  value: string | ReadonlyArray<string> | number;
 }
 
 export const useStyles = createUseStyles(
@@ -37,8 +37,8 @@ export const useStyles = createUseStyles(
       minWidth: 288,
       height: 56,
       border: {
-        width: ({ currValue }: StyleProps) =>
-          currValue && currValue.toString().length ? 2 : 1,
+        width: ({ value }: StyleProps) =>
+          value && value.toString().length ? 2 : 1,
         style: 'solid',
         color: palette.outline
       },
@@ -48,7 +48,7 @@ export const useStyles = createUseStyles(
       '&:focus': {
         outline: 'none',
         borderWidth: 2,
-        '&+span': {
+        '&+label': {
           top: 0,
           left: 12,
           padding: [0, 4],
@@ -62,30 +62,30 @@ export const useStyles = createUseStyles(
     },
     label: {
       position: 'absolute',
-      top: ({ currValue }: StyleProps) =>
-        currValue && currValue.toString().length ? 0 : '50%',
-      left: ({ currValue }: StyleProps) =>
-        currValue && currValue.toString().length ? 12 : 16,
-      paddingLeft: ({ currValue }: StyleProps) =>
-        currValue && currValue.toString().length ? 4 : 0,
-      paddingRight: ({ currValue }: StyleProps) =>
-        currValue && currValue.toString().length ? 4 : 0,
+      top: ({ value }: StyleProps) =>
+        value && value.toString().length ? 0 : '50%',
+      left: ({ value }: StyleProps) =>
+        value && value.toString().length ? 12 : 16,
+      paddingLeft: ({ value }: StyleProps) =>
+        value && value.toString().length ? 4 : 0,
+      paddingRight: ({ value }: StyleProps) =>
+        value && value.toString().length ? 4 : 0,
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
       gap: 16,
       transform: 'translateY(-50%)',
       pointerEvents: 'none',
-      fontSize: ({ currValue }: StyleProps) =>
-        currValue && currValue.toString().length
+      fontSize: ({ value }: StyleProps) =>
+        value && value.toString().length
           ? typography.sizes.body.small.fontSize
           : 'inherit',
-      lineHeight: ({ currValue }: StyleProps) =>
-        currValue && currValue.toString().length
+      lineHeight: ({ value }: StyleProps) =>
+        value && value.toString().length
           ? typography.sizes.body.small.lineHeight
           : 'inherit',
-      letterSpacing: ({ currValue }: StyleProps) =>
-        currValue && currValue.toString().length
+      letterSpacing: ({ value }: StyleProps) =>
+        value && value.toString().length
           ? typography.sizes.body.small.letterSpacing
           : 'inherit'
     },
@@ -97,14 +97,12 @@ export const useStyles = createUseStyles(
       zIndex: -1,
       width: '100%',
       height: 3,
-      background: ({ currValue }: StyleProps) =>
-        currValue && currValue.toString().length
-          ? palette.surface
-          : 'transparent',
+      background: ({ value }: StyleProps) =>
+        value && value.toString().length ? palette.surface : 'transparent',
       border: 'none',
       transform: 'translateY(-5%)',
-      borderTopLeftRadius: ({ currValue }: StyleProps) =>
-        currValue && currValue.toString().length ? '20%' : 0
+      borderTopLeftRadius: ({ value }: StyleProps) =>
+        value && value.toString().length ? '20%' : 0
     },
     advantages: {
       maxWidth: 288,

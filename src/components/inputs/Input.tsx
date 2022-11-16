@@ -18,4 +18,6 @@ export const Input: FC<InputProps> = ({ type, className, ...props }) => {
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   error?: string;
+  advantageText?: string;
+  textLimit?: number;
 }

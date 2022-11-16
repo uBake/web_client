@@ -6,7 +6,7 @@ import { InputProps } from '../Input';
 import { useStyles } from './styles';
 
 export const CheckBox: FC<InputProps> = ({
-  checked: isChecked,
+  checked,
   disabled,
   label,
   id = 'checkbox',
@@ -15,21 +15,19 @@ export const CheckBox: FC<InputProps> = ({
   className,
   ...props
 }) => {
-  const styles = useStyles({ disabled });
-  const [checked, setChecked] = useState(isChecked);
-  console.log(error);
+  const styles = useStyles();
+  const [isChecked, setIsChecked] = useState(checked);
 
   const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     if (disabled) return;
-
-    setChecked(prev => !prev);
+    setIsChecked(e.target.checked);
     onChange && onChange(e);
   };
 
   return (
     <label htmlFor={id} className={classNames([styles.wrapper, className])}>
       <a
-        data-checked={checked}
+        data-checked={isChecked}
         data-disabled={disabled}
         data-error={error && error.length > 0}
         className={styles.checkbox}
@@ -37,7 +35,7 @@ export const CheckBox: FC<InputProps> = ({
         <div></div>
         <Icon icon='Done' className={styles.check} />
         <input
-          checked={checked}
+          checked={isChecked}
           id={id}
           disabled={disabled}
           className={styles.input}
@@ -45,9 +43,9 @@ export const CheckBox: FC<InputProps> = ({
           {...props}
         />
       </a>
-      <span data-disabled={disabled} className={styles.label}>
+      <label htmlFor={id} data-disabled={disabled} className={styles.label}>
         {label}
-      </span>
+      </label>
     </label>
   );
 };
