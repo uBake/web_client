@@ -32,6 +32,7 @@ export const RadioButton: FC<InputProps> = ({
           checked={isChecked}
           onChange={changeHandler}
           id={id}
+          disabled={disabled}
           {...props}
         />
         <span className={styles.check}></span>

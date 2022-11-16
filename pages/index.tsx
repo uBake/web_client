@@ -10,9 +10,14 @@ const Home: NextPage = () => {
   };
   return (
     <Container>
-      <Input textLimit={9} value='' onChange={onChange} />
-      <Input type='checkbox' checked={false} onChange={onChange} />
-      <Input type='radio' checked={false} onChange={onChange} />
+      <Input label='Label' textLimit={9} value='' onChange={onChange} />
+      <Input
+        label='Label'
+        type='checkbox'
+        checked={false}
+        onChange={onChange}
+      />
+      <Input label='Label' type='radio' checked={false} onChange={onChange} />
     </Container>
   );
 };

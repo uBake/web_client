@@ -19,7 +19,6 @@ export const CheckBox: FC<InputProps> = ({
   const [isChecked, setIsChecked] = useState(checked);
 
   const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    if (disabled) return;
     setIsChecked(e.target.checked);
     onChange && onChange(e);
   };
