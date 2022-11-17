@@ -5,17 +5,17 @@ import { Icon } from '../../Icon/Icon';
 import { InputProps } from '../Input';
 import { useStyles } from './styles';
 
-export const CheckBox: FC<InputProps> = ({
+export const Switch: FC<InputProps> = ({
   checked,
   disabled = false,
   label,
-  id = 'checkbox',
-  error = '',
+  id = 'switch',
   onChange,
   className,
+  withIcon = 'no',
   ...props
 }) => {
-  const styles = useStyles();
+  const styles = useStyles({ disabled, withIcon });
   const [isChecked, setIsChecked] = useState(checked);
 
   const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -25,27 +25,34 @@ export const CheckBox: FC<InputProps> = ({
 
   return (
     <label htmlFor={id} className={classNames([styles.wrapper, className])}>
+      <label htmlFor={id} className={styles.label}>
+        {label}
+      </label>
       <a
-        data-checked={isChecked}
-        data-disabled={disabled}
-        data-error={error && error.length > 0}
-        className={styles.checkbox}
+        className={classNames([
+          styles.checkbox,
+          { [styles.checked]: isChecked }
+        ])}
       >
-        <div></div>
-        <Icon icon='Done' className={styles.check} />
+        <span className={styles.thumb}>
+          {withIcon === 'always' && !isChecked && (
+            <Icon size={16} icon='Close' className={styles.closeIcon} />
+          )}
+          {withIcon !== 'no' && isChecked && (
+            <Icon size={16} icon='Done' className={styles.doneIcon} />
+          )}
+          <span className={styles.halo}></span>
+        </span>
         <input
+          type='checkbox'
           checked={isChecked}
           id={id}
           disabled={disabled}
           className={styles.input}
           onChange={changeHandler}
-          type='checkbox'
           {...props}
         />
       </a>
-      <label htmlFor={id} data-disabled={disabled} className={styles.label}>
-        {label}
-      </label>
     </label>
   );
 };

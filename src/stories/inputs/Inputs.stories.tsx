@@ -17,6 +17,13 @@ export const Checkbox = {
   }
 };
 
+export const Switch = {
+  args: {
+    type: 'switch',
+    checked: false
+  }
+};
+
 export const RadioButton = {
   args: {
     type: 'radio',

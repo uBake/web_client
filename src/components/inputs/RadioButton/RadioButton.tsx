@@ -28,6 +28,7 @@ export const RadioButton: FC<InputProps> = ({
         })}
       >
         <input
+          type='radio'
           className={classNames(styles.input, className)}
           checked={isChecked}
           onChange={changeHandler}
