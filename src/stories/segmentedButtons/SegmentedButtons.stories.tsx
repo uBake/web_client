@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentMeta } from '@storybook/react';
 
 import { SegmentedButtonProps } from '../../components/SegmetedButtons/SegmentedButton/SegmentedButton';
 import { SegmentedButtons as BaseForStory } from '../../components/SegmetedButtons/SegmentedButtons';
@@ -38,15 +38,9 @@ const someChildren: SegmentedButtonProps[] = [
 
 const variants = { oneChild, twoChildren, someChildren };
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Components',
   component: BaseForStory,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  args: {
-    btns: oneChild,
-    direction: 'column'
-  },
   argTypes: {
     btns: {
       options: Object.keys(variants),
@@ -65,7 +59,9 @@ export default {
   }
 } as ComponentMeta<typeof BaseForStory>;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-export const SegmentedButtons: ComponentStory<typeof BaseForStory> = props => (
-  <BaseForStory {...props} />
-);
+export const SegmentedButtons = {
+  args: {
+    btns: oneChild,
+    direction: 'column'
+  }
+};

@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentMeta } from '@storybook/react';
 
 import { Badge } from '../../components/Badge/Badge';
 
@@ -6,12 +6,6 @@ import { Badge } from '../../components/Badge/Badge';
 export default {
   title: 'Components',
   component: Badge,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  args: {
-    count: undefined,
-    hPos: 'right',
-    vPos: 'top'
-  },
   argTypes: {
     count: {
       options: [undefined, 5, '99+'],
@@ -28,11 +22,15 @@ export default {
   }
 } as ComponentMeta<typeof Badge>;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-export const Badges: ComponentStory<typeof Badge> = ({ children, ...args }) => (
-  <Badge {...args}>
-    <div
-      style={{ background: 'rgba(0, 0, 0, .5)', width: 24, height: 24 }}
-    ></div>
-  </Badge>
-);
+export const Badges = {
+  args: {
+    count: undefined,
+    hPos: 'right',
+    vPos: 'top',
+    children: (
+      <div
+        style={{ background: 'rgba(0, 0, 0, .5)', width: 24, height: 24 }}
+      ></div>
+    )
+  }
+};

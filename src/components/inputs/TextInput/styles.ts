@@ -44,7 +44,7 @@ export const useStyles = createUseStyles(
       },
       font: 'inherit',
       background: palette.surface,
-      color: palette.onSurfaceVariant,
+      color: palette.onSurface,
       '&:focus': {
         outline: 'none',
         borderWidth: 2,
