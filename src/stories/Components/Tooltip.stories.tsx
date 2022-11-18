@@ -1,4 +1,4 @@
-import { Story } from '@storybook/react';
+import { ComponentMeta, Story } from '@storybook/react';
 
 import { Tooltip as TooltipBase } from '../../components/Tooltip/Tooltip';
 
@@ -13,7 +13,7 @@ export default {
       </div>
     )
   ]
-};
+} as ComponentMeta<typeof TooltipBase>;
 
 export const Tooltip = {
   args: {

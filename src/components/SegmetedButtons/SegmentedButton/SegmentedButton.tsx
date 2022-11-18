@@ -19,11 +19,11 @@ export const SegmentedButton: FC<SegmentedButtonProps> = ({
   );
 };
 
-export interface SegmentedButtonProps extends SegmentedButton {
+export interface SegmentedButtonProps extends SegmentedButtonData {
   btnsDirection: FlexDirections;
 }
 
-export interface SegmentedButton {
+export interface SegmentedButtonData {
   id: number;
   direction: FlexDirections;
   label: string | ReactNode;

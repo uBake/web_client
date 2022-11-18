@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { FC, PropsWithChildren } from 'react';
+import { FC, HTMLAttributes } from 'react';
 
 import { useStyles } from './styles';
 
@@ -7,7 +7,7 @@ export type VerticalAligns = 'top' | 'bottom';
 
 export type HorizontalAlign = 'left' | 'right';
 
-export interface BadgeProps extends PropsWithChildren {
+export interface BadgeProps extends HTMLAttributes<HTMLDivElement> {
   count?: number | string;
   vPos?: VerticalAligns;
   hPos?: HorizontalAlign;

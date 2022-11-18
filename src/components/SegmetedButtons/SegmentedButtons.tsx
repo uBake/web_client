@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import { FlexDirections } from '../../types';
-import { SegmentedButton } from './SegmentedButton/SegmentedButton';
+import { SegmentedButton, SegmentedButtonData } from './SegmentedButton/SegmentedButton';
 import { useStyles } from './styles';
 
 export const SegmentedButtons: FC<SegmentedButtonsProps> = ({
@@ -20,6 +20,6 @@ export const SegmentedButtons: FC<SegmentedButtonsProps> = ({
 };
 
 export interface SegmentedButtonsProps {
-  btns: SegmentedButton[];
+  btns: SegmentedButtonData[];
   direction?: FlexDirections;
 }
