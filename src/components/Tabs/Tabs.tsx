@@ -1,9 +1,9 @@
 import { FC, HTMLAttributes, useEffect, useState } from 'react';
 
-import { useStyles } from './styles';
 import { Tab, TabData } from './Tab/Tab';
+import { useStyles } from './styles';
 
-interface TabsProps extends HTMLAttributes<HTMLDivElement> {
+export interface TabsProps extends HTMLAttributes<HTMLDivElement> {
   tabs: TabData[];
   onTabSelect: (id: string) => void;
   selectedId: string;
