@@ -14,7 +14,6 @@ export default {
         [ThemeModes.dark]: themes[ThemeModes.dark],
         [ThemeModes.light]: themes[ThemeModes.light]
       },
-      defaultValue: ThemeModes.light,
       control: 'radio'
     }
   }
@@ -24,7 +23,9 @@ interface PaletteTemplateProps {
   theme: DefaultTheme;
 }
 
-export const Palette = ({ theme }: PaletteTemplateProps) => (
+export const Palette = ({
+  theme = themes[ThemeModes.light]
+}: PaletteTemplateProps) => (
   <div
     style={{
       display: 'grid',

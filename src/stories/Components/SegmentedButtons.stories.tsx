@@ -50,7 +50,6 @@ export default {
         twoChildren: 'Two Children',
         someChildren: 'Some Children'
       },
-      defaultValue: oneChild,
       control: 'radio'
     },
     direction: {

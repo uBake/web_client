@@ -1,3 +1,5 @@
+import { Story } from '@storybook/react';
+
 import { Tooltip as TooltipBase } from '../../components/Tooltip/Tooltip';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -5,7 +7,7 @@ export default {
   title: 'Components',
   component: TooltipBase,
   decorators: [
-    Story => (
+    (Story: Story) => (
       <div style={{ padding: 100 }}>
         <Story />
       </div>
