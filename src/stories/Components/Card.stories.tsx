@@ -10,7 +10,7 @@ export default {
 
 export const Cards = {
   args: {
-    head: 'url(https://www.fillmurray.com/320/240)',
+    head: 'https://www.fillmurray.com/320/180',
     title: 'Cafe Basilico'
   }
 };
