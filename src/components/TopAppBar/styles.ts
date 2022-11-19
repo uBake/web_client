@@ -18,7 +18,8 @@ export const useStyles = createUseStyles(({ palette, typography }) => ({
     flexWrap: ({ size }: StyleProps) =>
       size === 'standard' ? 'no-wrap' : 'wrap',
     columnGap: 4,
-    rowGap: ({ size }: StyleProps) => (size === 'large' ? 36 : 0)
+    rowGap: ({ size }: StyleProps) => (size === 'large' ? 36 : 0),
+    padding: '0 4px'
   },
   leftPart: {
     display: 'flex',
