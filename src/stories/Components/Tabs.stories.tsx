@@ -1,11 +1,7 @@
 import { ComponentMeta, Story } from '@storybook/react';
 
 import { Tabs as TabsBase } from '../../components/Tabs/Tabs';
-
-const genFakeTab = (id: number) => ({
-  id: id.toString(),
-  title: 'Tab ' + id
-});
+import { genFakeTab } from '../helpers';
 
 const tabs = [genFakeTab(1), genFakeTab(2), genFakeTab(3)];
 

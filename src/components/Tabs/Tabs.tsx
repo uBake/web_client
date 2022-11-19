@@ -1,15 +1,22 @@
+import classNames from 'classnames';
 import { FC, HTMLAttributes, useEffect, useState } from 'react';
 
-import { Tab, TabData } from './Tab/Tab';
 import { useStyles } from './styles';
+import { Tab, TabData } from './Tab/Tab';
 
 export interface TabsProps extends HTMLAttributes<HTMLDivElement> {
-  tabs: TabData[];
   onTabSelect: (id: string) => void;
   selectedId: string;
+  tabs: TabData[];
 }
 
-export const Tabs: FC<TabsProps> = ({ tabs = [], onTabSelect, selectedId }) => {
+export const Tabs: FC<TabsProps> = ({
+  className,
+  onTabSelect,
+  selectedId,
+  tabs = [],
+  ...props
+}) => {
   const [selectedTabId, setSelectedTabId] = useState<string>(selectedId);
   const selectHandler = (tabId: string) => {
     setSelectedTabId(tabId);
@@ -26,8 +33,8 @@ export const Tabs: FC<TabsProps> = ({ tabs = [], onTabSelect, selectedId }) => {
   const styles = useStyles();
 
   return (
-    <div className={styles.tabs}>
-      {tabs.map(({ id, ...props }) => {
+    <div className={classNames(styles.tabs, className)} {...props}>
+      {tabs.map(({ id, ...tabProps }) => {
         const selected = selectedTabId === id;
         return (
           <Tab
@@ -35,7 +42,7 @@ export const Tabs: FC<TabsProps> = ({ tabs = [], onTabSelect, selectedId }) => {
             onTabSelect={selectHandler}
             key={id}
             id={id}
-            {...props}
+            {...tabProps}
           />
         );
       })}
