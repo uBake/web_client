@@ -5,7 +5,11 @@ import { RadioButton } from './RadioButton/RadioButton';
 import { Switch } from './Switch/Switch';
 import { TextInput } from './TextInput/TextInput';
 
-export const Input: FC<InputProps> = ({ type, className, ...props }) => {
+export const Input: FC<InputProps> = ({
+  type = 'text',
+  className,
+  ...props
+}) => {
   switch (type) {
     case 'checkbox':
       return <CheckBox {...props} />;

@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import cn from 'clsx';
 import { ButtonHTMLAttributes, FC } from 'react';
 
 import { FlexDirections } from '../../types';
@@ -26,7 +26,7 @@ export const Button: FC<ButtonProps> = ({
   return (
     <button
       disabled={disabled}
-      className={classNames(styles.button, styles[variant], className)}
+      className={cn(styles.button, styles[variant], className)}
       {...props}
     >
       {children}

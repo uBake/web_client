@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import cn from 'clsx';
 import { FC, HTMLAttributes } from 'react';
 
 import { useStyles } from './styles';
@@ -23,9 +23,7 @@ export const Badge: FC<BadgeProps> = ({
 
   return (
     <div className={styles.wrapper}>
-      <p className={classNames(styles.badge, styles[hPos], styles[vPos])}>
-        {count}
-      </p>
+      <p className={cn(styles.badge, styles[hPos], styles[vPos])}>{count}</p>
       {children}
     </div>
   );

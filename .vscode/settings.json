@@ -1,6 +1,5 @@
 {
   "cSpell.words": ["ubake"],
-  "typescriptHero.imports.disableImportsSorting": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": true,
     "source.organizeImports": true,
@@ -8,5 +7,8 @@
   },
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "typescriptHero.imports.organizeOnSave": true
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescriptHero.imports.organizeOnSave": true,
+  "typescriptHero.imports.disableImportsSorting": true,
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }

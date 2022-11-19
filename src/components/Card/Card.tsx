@@ -12,7 +12,10 @@ export const Card: FC<CardProps> = ({ head, title }) => {
 
   return (
     <div className={styles.card}>
-      <div style={{ background: head }} className={styles.cardHead}></div>
+      <div
+        style={{ background: `url(${head})` }}
+        className={styles.cardHead}
+      ></div>
       <div className={styles.cardBody}>
         <p className={styles.cardTitle}>{title}</p>
       </div>

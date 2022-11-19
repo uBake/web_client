@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import cn from 'clsx';
 import { ChangeEvent, FC, useState } from 'react';
 
 import { Icon } from '../../Icon/Icon';
@@ -24,16 +24,11 @@ export const Switch: FC<InputProps> = ({
   };
 
   return (
-    <label htmlFor={id} className={classNames([styles.wrapper, className])}>
+    <label htmlFor={id} className={cn([styles.wrapper, className])}>
       <label htmlFor={id} className={styles.label}>
         {label}
       </label>
-      <a
-        className={classNames([
-          styles.checkbox,
-          { [styles.checked]: isChecked }
-        ])}
-      >
+      <a className={cn([styles.checkbox, { [styles.checked]: isChecked }])}>
         <span className={styles.thumb}>
           {withIcon === 'always' && !isChecked && (
             <Icon size={16} icon='Close' className={styles.closeIcon} />

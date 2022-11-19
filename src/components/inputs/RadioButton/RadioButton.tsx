@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import cn from 'clsx';
 import { ChangeEvent, FC, useState } from 'react';
 
 import { InputProps } from '../Input';
@@ -22,14 +22,14 @@ export const RadioButton: FC<InputProps> = ({
   return (
     <label htmlFor={id} className={styles.wrapper}>
       <div
-        className={classNames(styles.radio, {
+        className={cn(styles.radio, {
           [styles.checked]: isChecked,
           [styles.disabled]: disabled
         })}
       >
         <input
           type='radio'
-          className={classNames(styles.input, className)}
+          className={cn(styles.input, className)}
           checked={isChecked}
           onChange={changeHandler}
           id={id}

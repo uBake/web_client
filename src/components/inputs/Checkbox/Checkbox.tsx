@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import cn from 'clsx';
 import { ChangeEvent, FC, useState } from 'react';
 
 import { Icon } from '../../Icon/Icon';
@@ -24,7 +24,7 @@ export const CheckBox: FC<InputProps> = ({
   };
 
   return (
-    <label htmlFor={id} className={classNames([styles.wrapper, className])}>
+    <label htmlFor={id} className={cn([styles.wrapper, className])}>
       <a
         data-checked={isChecked}
         data-disabled={disabled}

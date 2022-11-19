@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import cn from 'clsx';
 import { DetailedHTMLProps, FC, HTMLAttributes, SVGProps } from 'react';
 
 import { useStyles } from './styles';
@@ -7,8 +7,8 @@ export const Tooltip: FC<TooltipProps> = ({ children, text, position }) => {
   const styles = useStyles();
 
   return (
-    <div className={classNames(styles.wrapper)}>
-      <div className={classNames(styles.tooltipWrapper, styles[position])}>
+    <div className={cn(styles.wrapper)}>
+      <div className={cn(styles.tooltipWrapper, styles[position])}>
         <span className={styles.tooltip}>
           <Tip className={styles.tip} />
           {text && text.length > 0 ? text : 'Tooltip'}

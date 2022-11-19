@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import cn from 'clsx';
 import { ChangeEvent, ChangeEventHandler, FC, useState } from 'react';
 
 import { InputProps } from '../Input';
@@ -40,7 +40,7 @@ export const TextInput: FC<TextInputProps> = ({
 
   return (
     <div
-      className={classNames([
+      className={cn([
         styles.wrapper,
         { [styles.error]: Boolean(error) },
         { [styles.disabled]: Boolean(disabled) }
@@ -51,7 +51,7 @@ export const TextInput: FC<TextInputProps> = ({
           type={type}
           value={currValue}
           onChange={changeHandler}
-          className={classNames([styles.textInput, className])}
+          className={cn([styles.textInput, className])}
           disabled={disabled}
           {...props}
         />
