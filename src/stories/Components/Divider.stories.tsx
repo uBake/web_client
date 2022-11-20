@@ -26,6 +26,6 @@ export default {
 export const Divider = {
   args: {
     text: 'Subheader',
-    direction: 'vertical'
+    direction: 'horizontal'
   }
 };
