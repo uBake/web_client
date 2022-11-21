@@ -39,7 +39,7 @@ const someChildren: SegmentedButtonProps[] = [
 const variants = { oneChild, twoChildren, someChildren };
 
 export default {
-  title: 'Components',
+  title: 'Components/Buttons',
   component: BaseForStory,
   argTypes: {
     btns: {

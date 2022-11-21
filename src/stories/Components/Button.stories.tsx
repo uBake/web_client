@@ -1,11 +1,11 @@
 import { ComponentMeta } from '@storybook/react';
 
-import { Button } from '../../components/Button/Button';
+import { Button as StoryBase } from '../../components/Button/Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Button',
-  component: Button,
+  title: 'Components/Buttons',
+  component: StoryBase,
   args: {
     children: 'Button',
     disabled: false,
@@ -18,39 +18,11 @@ export default {
     }
   }
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-} as ComponentMeta<typeof Button>;
+} as ComponentMeta<typeof StoryBase>;
 
-export const Filled = {
+export const Button = {
   args: {
     variant: 'filled',
-    children: 'Filled Button'
-  }
-};
-
-export const Tonal = {
-  args: {
-    variant: 'tonal',
-    children: 'Tonal Button'
-  }
-};
-
-export const Outlined = {
-  args: {
-    variant: 'outlined',
-    children: 'Outlined Button'
-  }
-};
-
-export const Elevated = {
-  args: {
-    variant: 'elevated',
-    children: 'Elevated Button'
-  }
-};
-
-export const Ghost = {
-  args: {
-    variant: 'ghost',
-    children: 'Ghost Button'
+    children: 'Button'
   }
 };
