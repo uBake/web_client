@@ -2,21 +2,21 @@ import { DefaultTheme } from 'react-jss';
 
 import { aspectRatio } from './aspectRatio';
 import { borderRadius } from './borderRadius';
+import { elevations } from './elevations';
 import { opacity } from './opacity';
-import { shadows } from './shadows';
 import { typography } from './typography';
 import { zIndex } from './zIndex';
 
 export const defaultTheme: Pick<
   DefaultTheme,
-  | 'shadows'
+  | 'elevations'
   | 'zIndex'
   | 'borderRadius'
   | 'aspectRatio'
   | 'typography'
   | 'opacity'
 > = {
-  shadows,
+  elevations,
   zIndex,
   borderRadius,
   aspectRatio,

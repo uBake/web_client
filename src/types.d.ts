@@ -2,7 +2,7 @@ declare global {
   namespace Jss {
     export interface Theme {
       palette: Palette;
-      shadows: Shadows;
+      elevations: Elevations;
       typography: Typography;
       zIndex: ZIndex;
       borderRadius: BorderRadius;
@@ -20,7 +20,9 @@ export type Opacity = Record<opacityVariants, string>;
 
 export type opacityVariants = 8 | 12 | 16 | 32 | 38;
 
-export type Shadows = string[];
+export type ElevationLevel = 1 | 2 | 3 | 4 | 5;
+
+export type Elevations = Record<ElevationLevel, string>;
 
 export type AspectRatio = Record<AspectRatioVariants, number>;
 
