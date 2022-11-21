@@ -56,7 +56,6 @@ export const useStyles = createUseStyles(
     },
     title: {
       width: '100%',
-      maxWidth: 196,
       overflow: 'hidden',
       textOverflow: 'ellipsis',
       padding: [0, 4],
