@@ -146,7 +146,7 @@ export const icons: Icons = {
   Window
 };
 
-interface IconProps extends SVGProps<SVGSVGElement> {
+export interface IconProps extends SVGProps<SVGSVGElement> {
   icon: IconVariant;
   size?: number;
 }

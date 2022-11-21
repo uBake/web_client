@@ -15,7 +15,9 @@ class MyDocument extends Document {
             </JssProvider>
           )
       });
+
     const initialProps = await Document.getInitialProps(ctx);
+
     return {
       ...initialProps,
       styles: (
@@ -23,7 +25,13 @@ class MyDocument extends Document {
           {initialProps.styles}
           <style id='server-side-styles'>{registry.toString()}</style>
         </>
-      )
+      ),
+      head: [
+        ...(initialProps.head as JSX.Element[]).filter(
+          item => item.props.name !== 'viewport'
+        ),
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+      ]
     };
   }
 }
