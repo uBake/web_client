@@ -1,8 +1,6 @@
 import { createUseStyles } from 'react-jss';
 
-interface StyleProps {
-  value: string | ReadonlyArray<string> | number;
-}
+import { InputProps } from '..';
 
 export const useStyles = createUseStyles(
   ({ borderRadius, typography, palette, opacity }) => ({
@@ -37,7 +35,7 @@ export const useStyles = createUseStyles(
       minWidth: 288,
       height: 56,
       border: {
-        width: ({ value }: StyleProps) =>
+        width: ({ value }: InputProps) =>
           value && value.toString().length ? 2 : 1,
         style: 'solid',
         color: palette.outline
@@ -62,13 +60,13 @@ export const useStyles = createUseStyles(
     },
     label: {
       position: 'absolute',
-      top: ({ value }: StyleProps) =>
+      top: ({ value }: InputProps) =>
         value && value.toString().length ? 0 : '50%',
-      left: ({ value }: StyleProps) =>
+      left: ({ value }: InputProps) =>
         value && value.toString().length ? 12 : 16,
-      paddingLeft: ({ value }: StyleProps) =>
+      paddingLeft: ({ value }: InputProps) =>
         value && value.toString().length ? 4 : 0,
-      paddingRight: ({ value }: StyleProps) =>
+      paddingRight: ({ value }: InputProps) =>
         value && value.toString().length ? 4 : 0,
       display: 'flex',
       justifyContent: 'center',
@@ -76,15 +74,15 @@ export const useStyles = createUseStyles(
       gap: 16,
       transform: 'translateY(-50%)',
       pointerEvents: 'none',
-      fontSize: ({ value }: StyleProps) =>
+      fontSize: ({ value }: InputProps) =>
         value && value.toString().length
           ? typography.sizes.body.small.fontSize
           : 'inherit',
-      lineHeight: ({ value }: StyleProps) =>
+      lineHeight: ({ value }: InputProps) =>
         value && value.toString().length
           ? typography.sizes.body.small.lineHeight
           : 'inherit',
-      letterSpacing: ({ value }: StyleProps) =>
+      letterSpacing: ({ value }: InputProps) =>
         value && value.toString().length
           ? typography.sizes.body.small.letterSpacing
           : 'inherit'
@@ -97,11 +95,11 @@ export const useStyles = createUseStyles(
       zIndex: -1,
       width: '100%',
       height: 3,
-      background: ({ value }: StyleProps) =>
+      background: ({ value }: InputProps) =>
         value && value.toString().length ? palette.surface : 'transparent',
       border: 'none',
       transform: 'translateY(-5%)',
-      borderTopLeftRadius: ({ value }: StyleProps) =>
+      borderTopLeftRadius: ({ value }: InputProps) =>
         value && value.toString().length ? '20%' : 0
     },
     advantages: {

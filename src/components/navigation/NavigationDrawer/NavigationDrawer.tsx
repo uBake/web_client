@@ -1,14 +1,14 @@
 import { FC, HTMLAttributes } from 'react';
 
-import { FloatingActionButton, FloatingActionButtonProps } from '../../FloatingActionButton/FloatingActionButton';
-import { Icon, IconVariant } from '../../Icon/Icon';
+import { Button, IconButtonProps } from '../../buttons/Button/Button';
+import { FloatingActionButton, FloatingActionButtonProps } from '../../buttons/FloatingActionButton/FloatingActionButton';
 import { NavigationDrawerItem, NavigationDrawerItemProps } from './NavigationDrawerItem/NavigationDrawerItem';
 import { useStyles } from './styles';
 
 export interface NavigationDrawerProps extends HTMLAttributes<HTMLElement> {
   title: string;
   subtitle?: string;
-  icon?: IconVariant;
+  iconButton?: IconButtonProps;
   fab?: FloatingActionButtonProps;
   items: NavigationDrawerItemProps[];
 }
@@ -17,17 +17,21 @@ export const NavigationDrawer: FC<NavigationDrawerProps> = ({
   title,
   subtitle,
   items,
-  icon,
+  iconButton,
   fab
 }) => {
   const styles = useStyles();
   return (
     <nav className={styles.drawer}>
-      {(title || subtitle || icon || fab) && (
+      {(title || subtitle || iconButton || fab) && (
         <div className={styles.head}>
-          {icon && (
+          {iconButton && (
             <div className={styles.iconWrapper}>
-              <Icon className={styles.icon} size={24} icon={icon} />
+              <Button
+                variant='ghost'
+                className={styles.button}
+                {...iconButton}
+              />
             </div>
           )}
           {(title || subtitle) && (

@@ -1,11 +1,17 @@
-import cn from 'clsx';
+import clsx from 'clsx';
 import { ChangeEvent, FC, useState } from 'react';
 
+import { InputProps } from '..';
 import { Icon } from '../../Icon/Icon';
-import { InputProps } from '../Input';
 import { useStyles } from './styles';
 
-export const Switch: FC<InputProps> = ({
+type WithIconVariants = 'no' | 'onSelect' | 'always';
+
+export interface SwitchProps extends InputProps {
+  withIcon?: WithIconVariants;
+}
+
+export const Switch: FC<SwitchProps> = ({
   checked,
   disabled = false,
   label,
@@ -24,11 +30,11 @@ export const Switch: FC<InputProps> = ({
   };
 
   return (
-    <label htmlFor={id} className={cn([styles.wrapper, className])}>
+    <label htmlFor={id} className={clsx([styles.wrapper, className])}>
       <label htmlFor={id} className={styles.label}>
         {label}
       </label>
-      <a className={cn([styles.checkbox, { [styles.checked]: isChecked }])}>
+      <a className={clsx([styles.checkbox, { [styles.checked]: isChecked }])}>
         <span className={styles.thumb}>
           {withIcon === 'always' && !isChecked && (
             <Icon size={16} icon='Close' className={styles.closeIcon} />

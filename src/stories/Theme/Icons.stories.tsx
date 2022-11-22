@@ -2,7 +2,7 @@ import { Icon, icons, IconVariant } from '../../components/Icon/Icon';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Theme/Icons',
+  title: 'Theme',
   subcomponents: { Icon }
 };
 

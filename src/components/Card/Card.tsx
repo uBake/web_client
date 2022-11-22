@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import { FC, HTMLAttributes } from 'react';
 
 import { useStyles } from './styles';
 
-interface CardProps {
+interface CardProps extends HTMLAttributes<HTMLDivElement> {
   head: string;
   title: string;
 }

@@ -1,5 +1,7 @@
 import { createUseStyles } from 'react-jss';
 
+// TODO: Fix disabled + checked style
+
 export const useStyles = createUseStyles(
   ({ palette, opacity, borderRadius, typography }) => ({
     wrapper: {

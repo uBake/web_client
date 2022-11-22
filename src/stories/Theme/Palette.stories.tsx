@@ -5,7 +5,7 @@ import { PaletteColorNames } from '../../types';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Theme/Palette',
+  title: 'Theme',
   argTypes: {
     theme: {
       options: [ThemeModes.light, ThemeModes.dark],

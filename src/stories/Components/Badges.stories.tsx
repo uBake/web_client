@@ -1,6 +1,7 @@
 import { ComponentMeta } from '@storybook/react';
 
 import { Badge } from '../../components/Badge/Badge';
+import { Button } from '../../components/buttons/Button/Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -27,10 +28,6 @@ export const Badges = {
     count: undefined,
     hPos: 'right',
     vPos: 'top',
-    children: (
-      <div
-        style={{ background: 'rgba(0, 0, 0, .5)', width: 24, height: 24 }}
-      ></div>
-    )
+    children: <Button icon='Add' variant='ghost' />
   }
 };

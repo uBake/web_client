@@ -1,10 +1,15 @@
-import cn from 'clsx';
+import clsx from 'clsx';
 import { ChangeEvent, ChangeEventHandler, FC, useState } from 'react';
 
-import { InputProps } from '../Input';
+import { InputProps } from '..';
 import { useStyles } from './styles';
 
-export interface TextInputProps extends InputProps {}
+export interface TextInputProps extends InputProps {
+  label?: string;
+  error?: string;
+  advantageText?: string;
+  textLimit?: number;
+}
 
 export const TextInput: FC<TextInputProps> = ({
   advantageText,
@@ -40,7 +45,7 @@ export const TextInput: FC<TextInputProps> = ({
 
   return (
     <div
-      className={cn([
+      className={clsx([
         styles.wrapper,
         { [styles.error]: Boolean(error) },
         { [styles.disabled]: Boolean(disabled) }
@@ -51,7 +56,7 @@ export const TextInput: FC<TextInputProps> = ({
           type={type}
           value={currValue}
           onChange={changeHandler}
-          className={cn([styles.textInput, className])}
+          className={clsx([styles.textInput, className])}
           disabled={disabled}
           {...props}
         />

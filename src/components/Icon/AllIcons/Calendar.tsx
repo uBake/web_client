@@ -1,4 +1,6 @@
-const SvgComponent: React.FC<React.SVGProps<SVGSVGElement>> = props => (
+import { Icon } from '../Icon';
+
+const SvgComponent: Icon = props => (
   <svg
     width='25'
     height='24'

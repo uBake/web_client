@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss';
 
-import { getGradientWithOpacity } from './../../themes/helpers';
+import { getGradientWithOpacity } from '../../../themes/helpers';
 
 export const useStyles = createUseStyles(
   ({
@@ -159,7 +159,7 @@ export const useStyles = createUseStyles(
     },
 
     icon: {},
-    text: {
+    label: {
       ...typography.sizes.label.large
     }
   })

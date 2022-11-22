@@ -95,7 +95,9 @@ export type IconVariant =
   | 'Tools'
   | 'Window';
 
-type Icons = Record<IconVariant, FC<SVGProps<SVGSVGElement>>>;
+export type Icon = FC<SVGProps<SVGSVGElement>>;
+
+type Icons = Record<IconVariant, Icon>;
 
 export const icons: Icons = {
   Account,

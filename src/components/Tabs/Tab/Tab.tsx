@@ -2,14 +2,14 @@ import { FC, HTMLAttributes } from 'react';
 
 import { useStyles } from './styles';
 
-export interface TabProps extends TabData {
-  selected: boolean;
-  onTabSelect: (id: string) => void;
-}
-
 export interface TabData extends HTMLAttributes<HTMLDivElement> {
   id: string;
   title: string;
+}
+
+export interface TabProps extends TabData {
+  selected: boolean;
+  onTabSelect: (id: string) => void;
 }
 
 export const Tab: FC<TabProps> = ({ id, title, selected, onTabSelect }) => {

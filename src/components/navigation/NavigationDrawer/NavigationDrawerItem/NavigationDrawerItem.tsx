@@ -12,7 +12,7 @@ export interface NavigationDrawerItemProps
   meta: string;
   active?: boolean;
   disabled?: boolean;
-  onActive?: (id: string) => void;
+  onItemClick?: (id: string) => void;
 }
 
 export const NavigationDrawerItem: FC<NavigationDrawerItemProps> = ({
@@ -22,12 +22,12 @@ export const NavigationDrawerItem: FC<NavigationDrawerItemProps> = ({
   meta,
   active,
   disabled,
-  onActive
+  onItemClick
 }) => {
   const styles = useStyles();
   const handleClick = () => {
-    if (onActive && !disabled) {
-      onActive(id);
+    if (onItemClick && !disabled) {
+      onItemClick(id);
     }
   };
 

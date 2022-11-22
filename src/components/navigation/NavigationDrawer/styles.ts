@@ -26,13 +26,18 @@ export const useStyles = createUseStyles(
       flexDirection: 'column',
       alignItems: 'flex-start',
       gap: 16,
-      padding: [16, 24]
+      padding: [24, 16]
     },
     iconWrapper: {
-      padding: 12
+      padding: 4
+    },
+    button: {
+      borderRadius: borderRadius.full,
+      padding: 8,
+      fill: onSurfaceVariant
     },
     icon: {
-      fill: onSurface
+      fill: 'inherit'
     },
     labels: {
       display: 'flex',

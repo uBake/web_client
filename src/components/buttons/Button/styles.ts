@@ -1,7 +1,8 @@
 import { createUseStyles } from 'react-jss';
 
-import { getGradientWithOpacity } from '../../themes/helpers';
+import { getGradientWithOpacity } from '../../../themes/helpers';
 import { ButtonProps } from './Button';
+import { getPaddings } from './helpers';
 
 export const useStyles = createUseStyles(
   ({
@@ -23,15 +24,19 @@ export const useStyles = createUseStyles(
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      gap: 8,
+      gap: ({ direction }: ButtonProps) =>
+        direction && ['column', 'column-reverse'].includes(direction) ? 0 : 8,
       minWidth: 40,
       minHeight: 40,
       border: 'none',
       borderRadius: borderRadius.large,
-      padding: [10, 24],
+      padding: ({ icon, label, direction }: ButtonProps) =>
+        getPaddings({ icon, label, direction }),
       margin: 0,
       flexDirection: ({ direction }: ButtonProps) => direction,
       cursor: 'pointer',
+      color: primary,
+      fill: primary,
       ...typography.sizes.label.large,
       '&[disabled]': {
         cursor: 'not-allowed',
@@ -41,9 +46,11 @@ export const useStyles = createUseStyles(
         filter: 'none'
       }
     },
+    // Variants
     filled: {
       background: primary,
       color: onPrimary,
+      fill: onPrimary,
       '&:hover': {
         backgroundImage: getGradientWithOpacity(onPrimary, opacity[8])
       },
@@ -54,6 +61,7 @@ export const useStyles = createUseStyles(
     tonal: {
       background: primaryContainer,
       color: onPrimaryContainer,
+      fill: onPrimaryContainer,
       '&:hover': {
         background: primaryContainer,
         backgroundImage: getGradientWithOpacity(onPrimaryContainer, opacity[8])
@@ -66,7 +74,6 @@ export const useStyles = createUseStyles(
     outlined: {
       background: 'transparent',
       border: [1, 'solid', outline],
-      color: primary,
       '&:hover': {
         background: primaryContainer,
         backgroundImage: getGradientWithOpacity(primary, opacity[8])
@@ -82,7 +89,6 @@ export const useStyles = createUseStyles(
     },
     elevated: {
       background: surface1,
-      color: primary,
       filter: elevations[1],
       '&:hover': {
         backgroundImage: getGradientWithOpacity(primary, opacity[8])
@@ -93,7 +99,6 @@ export const useStyles = createUseStyles(
     },
     ghost: {
       background: 'transparent',
-      color: primary,
       '&:hover': {
         background: primary + opacity[8]
       },
@@ -101,6 +106,10 @@ export const useStyles = createUseStyles(
       '&[disabled]': {
         background: 'transparent'
       }
+    },
+
+    icon: {
+      fill: 'inherit'
     }
   })
 );

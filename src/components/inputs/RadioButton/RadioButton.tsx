@@ -1,7 +1,7 @@
-import cn from 'clsx';
+import clsx from 'clsx';
 import { ChangeEvent, FC, useState } from 'react';
 
-import { InputProps } from '../Input';
+import { InputProps } from '..';
 import { useStyles } from './styles';
 
 export const RadioButton: FC<InputProps> = ({
@@ -22,14 +22,14 @@ export const RadioButton: FC<InputProps> = ({
   return (
     <label htmlFor={id} className={styles.wrapper}>
       <div
-        className={cn(styles.radio, {
+        className={clsx(styles.radio, {
           [styles.checked]: isChecked,
           [styles.disabled]: disabled
         })}
       >
         <input
           type='radio'
-          className={cn(styles.input, className)}
+          className={clsx(styles.input, className)}
           checked={isChecked}
           onChange={changeHandler}
           id={id}

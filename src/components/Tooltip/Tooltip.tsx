@@ -1,14 +1,22 @@
-import cn from 'clsx';
+import clsx from 'clsx';
 import { DetailedHTMLProps, FC, HTMLAttributes, SVGProps } from 'react';
 
 import { useStyles } from './styles';
+
+type TooltipPos = 'top' | 'right' | 'bottom' | 'left';
+
+interface TooltipProps
+  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+  position: TooltipPos;
+  text: string;
+}
 
 export const Tooltip: FC<TooltipProps> = ({ children, text, position }) => {
   const styles = useStyles();
 
   return (
-    <div className={cn(styles.wrapper)}>
-      <div className={cn(styles.tooltipWrapper, styles[position])}>
+    <div className={clsx(styles.wrapper)}>
+      <div className={clsx(styles.tooltipWrapper, styles[position])}>
         <span className={styles.tooltip}>
           <Tip className={styles.tip} />
           {text && text.length > 0 ? text : 'Tooltip'}
@@ -31,11 +39,3 @@ const Tip = (props: SVGProps<SVGSVGElement>) => (
     <path d='M9.0025 7.00098L0.351562 0L9.00195 3L17.6516 0L9.0025 7.00098Z' />
   </svg>
 );
-
-interface TooltipProps
-  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  position: TooltipPos;
-  text: string;
-}
-
-type TooltipPos = 'top' | 'right' | 'bottom' | 'left';

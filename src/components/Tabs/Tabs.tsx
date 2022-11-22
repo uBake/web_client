@@ -1,4 +1,4 @@
-import cn from 'clsx';
+import clsx from 'clsx';
 import { FC, HTMLAttributes, useEffect, useState } from 'react';
 
 import { useStyles } from './styles';
@@ -33,7 +33,7 @@ export const Tabs: FC<TabsProps> = ({
   const styles = useStyles();
 
   return (
-    <div className={cn(styles.tabs, className)} {...props}>
+    <div className={clsx(styles.tabs, className)} {...props}>
       {tabs.map(({ id, ...tabProps }) => {
         const selected = selectedTabId === id;
         return (

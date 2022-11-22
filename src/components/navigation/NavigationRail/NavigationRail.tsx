@@ -1,14 +1,9 @@
 import { FC, HTMLAttributes } from 'react';
 
-import { Button, ButtonProps } from '../../Button/Button';
-import { FloatingActionButton, FloatingActionButtonProps } from '../../FloatingActionButton/FloatingActionButton';
-import { Icon, IconVariant } from '../../Icon/Icon';
+import { Button, IconButtonProps } from '../../buttons/Button/Button';
+import { FloatingActionButton, FloatingActionButtonProps } from '../../buttons/FloatingActionButton/FloatingActionButton';
 import { NavigationRailItem, NavigationRailItemProps } from './NavigationRailItem/NavigationRailItem';
 import { useStyles } from './styles';
-
-interface IconButtonProps extends ButtonProps {
-  icon: IconVariant;
-}
 
 export interface NavigationRailProps extends HTMLAttributes<HTMLElement> {
   iconButton?: IconButtonProps;
@@ -29,13 +24,11 @@ export const NavigationRail: FC<NavigationRailProps> = ({
         <div className={styles.head}>
           {iconButton && (
             <div className={styles.iconWrapper}>
-              <Button variant='ghost' className={styles.button} {...iconButton}>
-                <Icon
-                  className={styles.icon}
-                  size={24}
-                  icon={iconButton.icon}
-                />
-              </Button>
+              <Button
+                variant='ghost'
+                className={styles.button}
+                {...iconButton}
+              />
             </div>
           )}
           {fab && (

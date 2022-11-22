@@ -1,9 +1,5 @@
 import { createUseStyles } from 'react-jss';
 
-import { InputProps } from './../Input';
-
-type StyleProp = Partial<InputProps>;
-
 export const useStyles = createUseStyles(
   ({ opacity, palette, borderRadius, typography }) => ({
     wrapper: {

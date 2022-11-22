@@ -16,8 +16,9 @@ export const useStyles = createUseStyles(
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'flex-start',
-      gap: 8,
       flexWrap: 'nowrap',
+      gap: 8,
+      width: 'fit-content',
       padding: 12,
       borderRadius: borderRadius.full,
       background: 'transparent'

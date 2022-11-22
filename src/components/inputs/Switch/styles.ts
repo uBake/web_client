@@ -1,8 +1,6 @@
 import { createUseStyles } from 'react-jss';
 
-import { InputProps } from '../Input';
-
-type StyleProps = Partial<InputProps>;
+import { SwitchProps } from './Switch';
 
 const THUMB_SIZE = 16,
   CHECKED_THUMB_SIZE = 24,
@@ -27,33 +25,33 @@ export const useStyles = createUseStyles(
         width: 2,
         style: 'solid'
       },
-      borderColor: ({ disabled }: StyleProps) =>
+      borderColor: ({ disabled }: SwitchProps) =>
         disabled ? palette.onSurface + opacity[12] : palette.outline,
-      cursor: ({ disabled }: StyleProps) =>
+      cursor: ({ disabled }: SwitchProps) =>
         disabled ? 'not-allowed' : 'pointer',
       borderRadius: borderRadius.large * 2,
       width: 52,
       height: 32,
       padding: SWITCH_PADDING,
-      background: ({ disabled }: StyleProps) =>
+      background: ({ disabled }: SwitchProps) =>
         disabled ? 'transparent' : palette.surfaceVariant,
       '&:hover': {
         '& $thumb': {
-          background: ({ disabled }: StyleProps) =>
+          background: ({ disabled }: SwitchProps) =>
             !disabled && palette.onSurfaceVariant
         },
         '& $halo': {
           background: palette.onSurface + opacity[8],
-          width: ({ disabled }: StyleProps) => !disabled && HALO_SIZE,
-          height: ({ disabled }: StyleProps) => !disabled && HALO_SIZE
+          width: ({ disabled }: SwitchProps) => !disabled && HALO_SIZE,
+          height: ({ disabled }: SwitchProps) => !disabled && HALO_SIZE
         }
       },
       '&:active': {
         '& $thumb': {
-          left: ({ disabled }: StyleProps) => !disabled && 0,
-          width: ({ disabled }: StyleProps) => !disabled && 28,
-          height: ({ disabled }: StyleProps) => !disabled && 28,
-          background: ({ disabled }: StyleProps) =>
+          left: ({ disabled }: SwitchProps) => !disabled && 0,
+          width: ({ disabled }: SwitchProps) => !disabled && 28,
+          height: ({ disabled }: SwitchProps) => !disabled && 28,
+          background: ({ disabled }: SwitchProps) =>
             !disabled && palette.onSurfaceVariant
         },
         '& $halo': {
@@ -62,29 +60,29 @@ export const useStyles = createUseStyles(
       }
     },
     checked: {
-      borderColor: ({ disabled }: StyleProps) =>
+      borderColor: ({ disabled }: SwitchProps) =>
         disabled ? 'transparent' : palette.primary,
-      background: ({ disabled }: StyleProps) =>
+      background: ({ disabled }: SwitchProps) =>
         disabled ? palette.onSurface + opacity[12] : palette.primary,
       '& $thumb': {
         width: 24,
         height: 24,
         left: `calc(100% - ${CHECKED_THUMB_SIZE + 2}px)`,
-        background: ({ disabled }: StyleProps) =>
+        background: ({ disabled }: SwitchProps) =>
           disabled ? palette.surface : palette.onPrimary
       },
       '&:hover': {
         '& $thumb': {
-          background: ({ disabled }: StyleProps) =>
+          background: ({ disabled }: SwitchProps) =>
             disabled ? palette.surface : palette.primaryContainer
         }
       },
       '&:active': {
         '& $thumb': {
-          left: ({ disabled }: StyleProps) =>
+          left: ({ disabled }: SwitchProps) =>
             !disabled && `calc(100% - ${CHECKED_THUMB_SIZE + 4}px)`,
-          width: ({ disabled }: StyleProps) => !disabled && 28,
-          height: ({ disabled }: StyleProps) => !disabled && 28
+          width: ({ disabled }: SwitchProps) => !disabled && 28,
+          height: ({ disabled }: SwitchProps) => !disabled && 28
         }
       }
     },
@@ -93,12 +91,12 @@ export const useStyles = createUseStyles(
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      left: ({ withIcon }: StyleProps) => (withIcon === 'always' ? 2 : 8),
-      width: ({ withIcon }: StyleProps) =>
+      left: ({ withIcon }: SwitchProps) => (withIcon === 'always' ? 2 : 8),
+      width: ({ withIcon }: SwitchProps) =>
         withIcon === 'always' ? CHECKED_THUMB_SIZE : THUMB_SIZE,
-      height: ({ withIcon }: StyleProps) =>
+      height: ({ withIcon }: SwitchProps) =>
         withIcon === 'always' ? CHECKED_THUMB_SIZE : THUMB_SIZE,
-      background: ({ disabled }: StyleProps) =>
+      background: ({ disabled }: SwitchProps) =>
         disabled ? palette.onSurface + opacity[38] : palette.outline,
       borderRadius: borderRadius.full
     },
@@ -109,17 +107,17 @@ export const useStyles = createUseStyles(
       borderRadius: borderRadius.full
     },
     doneIcon: {
-      fill: ({ disabled }: StyleProps) =>
+      fill: ({ disabled }: SwitchProps) =>
         disabled ? palette.onSurface + opacity[38] : palette.onPrimaryContainer
     },
     closeIcon: {
-      fill: ({ disabled }: StyleProps) =>
+      fill: ({ disabled }: SwitchProps) =>
         disabled ? palette.surface : palette.surfaceVariant
     },
     label: {
-      cursor: ({ disabled }: StyleProps) =>
+      cursor: ({ disabled }: SwitchProps) =>
         disabled ? 'not-allowed' : 'pointer',
-      color: ({ disabled }: StyleProps) =>
+      color: ({ disabled }: SwitchProps) =>
         disabled ? palette.onSurfaceVariant + opacity[38] : palette.onSurface,
       ...typography.sizes.body.medium
     },

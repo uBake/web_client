@@ -14,7 +14,11 @@ declare global {
   }
 }
 
-export type FlexDirections = 'column' | 'row';
+export type FlexDirections =
+  | 'column'
+  | 'row'
+  | 'column-reverse'
+  | 'row-reverse';
 
 export type Opacity = Record<opacityVariants, string>;
 

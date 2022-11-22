@@ -1,7 +1,8 @@
 import clsx from 'clsx';
-import { ButtonHTMLAttributes, FC } from 'react';
+import { FC } from 'react';
 
-import { Icon, IconVariant } from '../Icon/Icon';
+import { Icon } from '../../Icon/Icon';
+import { ButtonProps } from '../Button/Button';
 import { useStyles } from './styles';
 
 export type FloatingActionVariants =
@@ -12,17 +13,15 @@ export type FloatingActionVariants =
 export type FloatingActionSizes = 'small' | 'medium' | 'large' | 'extended';
 
 export interface FloatingActionButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement> {
+  extends Omit<ButtonProps, 'variant' | 'direction'> {
   variant?: FloatingActionVariants;
   size?: FloatingActionSizes;
-  text?: string;
-  icon?: IconVariant;
 }
 
 export const FloatingActionButton: FC<FloatingActionButtonProps> = ({
   variant = 'primary',
   size = 'medium',
-  text,
+  label,
   icon,
   disabled,
   ...props
@@ -36,8 +35,8 @@ export const FloatingActionButton: FC<FloatingActionButtonProps> = ({
       {...props}
     >
       {icon && <Icon className={styles.icon} size={24} icon={icon} />}
-      {size === 'extended' && text && (
-        <span className={styles.text}>{text}</span>
+      {size === 'extended' && label && (
+        <span className={styles.label}>{label}</span>
       )}
     </button>
   );

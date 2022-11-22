@@ -10,7 +10,7 @@ export interface NavigationRailItemProps
   icon: IconVariant;
   active?: boolean;
   disabled?: boolean;
-  onActive?: (id: string) => void;
+  onItemClick?: (id: string) => void;
 }
 
 export const NavigationRailItem: FC<NavigationRailItemProps> = ({
@@ -18,12 +18,12 @@ export const NavigationRailItem: FC<NavigationRailItemProps> = ({
   icon,
   active,
   disabled,
-  onActive
+  onItemClick
 }) => {
   const styles = useStyles();
   const handleClick = () => {
-    if (onActive && !disabled) {
-      onActive(id);
+    if (onItemClick && !disabled) {
+      onItemClick(id);
     }
   };
 

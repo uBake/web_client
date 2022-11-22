@@ -2,7 +2,7 @@ import { createUseStyles } from 'react-jss';
 
 import { DividerProps } from './Divider';
 
-interface StyleProps extends Partial<DividerProps> {
+interface StyleProps extends DividerProps {
   size: 1 | 8;
 }
 

@@ -2,7 +2,7 @@ import { createUseStyles } from 'react-jss';
 
 import { colors } from './../../themes/colors';
 
-export const useStyles = createUseStyles(({ palette, opacity }) => ({
+export const useStyles = createUseStyles(({ opacity }) => ({
   wrapper: {
     position: 'fixed',
     top: 0,

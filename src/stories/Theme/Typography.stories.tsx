@@ -1,11 +1,8 @@
 import { typography } from '../../themes/typography';
 import { FontWeightsVariants, TypographyTypes } from '../../types';
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Theme',
-  // component: Button
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     weight: {
       options: [400, 500, 700],
@@ -14,7 +11,6 @@ export default {
   }
 };
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 export const Typography = ({ weight }: { weight: FontWeightsVariants }) => (
   <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
     {Object.keys(typography.sizes).map((size, i) => (

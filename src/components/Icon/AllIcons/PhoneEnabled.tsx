@@ -1,4 +1,4 @@
-const SvgComponent: React.FC<React.SVGProps<SVGSVGElement>> = props => (
+const SvgComponent: Icon = props => (
   <svg
     width='25'
     height='24'

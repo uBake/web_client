@@ -1,16 +1,20 @@
-import cn from 'clsx';
+import clsx from 'clsx';
 import { ChangeEvent, FC, useState } from 'react';
 
+import { InputProps } from '..';
 import { Icon } from '../../Icon/Icon';
-import { InputProps } from '../Input';
 import { useStyles } from './styles';
 
-export const CheckBox: FC<InputProps> = ({
+export interface CheckboxProps extends InputProps {
+  error?: boolean;
+}
+
+export const Checkbox: FC<CheckboxProps> = ({
   checked,
   disabled = false,
   label,
   id = 'checkbox',
-  error = '',
+  error = false,
   onChange,
   className,
   ...props
@@ -24,11 +28,11 @@ export const CheckBox: FC<InputProps> = ({
   };
 
   return (
-    <label htmlFor={id} className={cn([styles.wrapper, className])}>
+    <label htmlFor={id} className={clsx([styles.wrapper, className])}>
       <a
         data-checked={isChecked}
         data-disabled={disabled}
-        data-error={error && error.length > 0}
+        data-error={error}
         className={styles.checkbox}
       >
         <div></div>
