@@ -53,7 +53,11 @@ export const useStyles = createUseStyles(
       color: onSurfaceVariant,
       ...typography.sizes.body.small
     },
-    fab: {},
+    fab: {
+      '&:not([disabled])': {
+        filter: 'none'
+      }
+    },
     body: {}
   })
 );

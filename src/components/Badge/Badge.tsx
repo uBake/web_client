@@ -8,7 +8,7 @@ export type VerticalAligns = 'top' | 'bottom';
 export type HorizontalAlign = 'left' | 'right';
 
 export interface BadgeProps extends HTMLAttributes<HTMLDivElement> {
-  count?: number | string;
+  count?: number;
   vPos?: VerticalAligns;
   hPos?: HorizontalAlign;
 }
@@ -23,7 +23,11 @@ export const Badge: FC<BadgeProps> = ({
 
   return (
     <div className={styles.wrapper}>
-      <p className={clsx(styles.badge, styles[hPos], styles[vPos])}>{count}</p>
+      {count && (
+        <p className={clsx(styles.badge, styles[hPos], styles[vPos])}>
+          {count > 1 && count}
+        </p>
+      )}
       {children}
     </div>
   );

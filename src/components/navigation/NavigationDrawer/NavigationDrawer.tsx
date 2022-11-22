@@ -41,7 +41,12 @@ export const NavigationDrawer: FC<NavigationDrawerProps> = ({
             </div>
           )}
           {fab && (
-            <FloatingActionButton variant='primary' size='extended' {...fab} />
+            <FloatingActionButton
+              variant='primary'
+              size='extended'
+              className={styles.fab}
+              {...fab}
+            />
           )}
         </div>
       )}

@@ -32,7 +32,12 @@ export const NavigationRail: FC<NavigationRailProps> = ({
             </div>
           )}
           {fab && (
-            <FloatingActionButton variant='tertiary' size='medium' {...fab} />
+            <FloatingActionButton
+              variant='tertiary'
+              size='medium'
+              className={styles.fab}
+              {...fab}
+            />
           )}
         </div>
       )}

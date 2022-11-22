@@ -29,7 +29,7 @@ export const NavigationDrawerItem = {
     id: '1',
     title: 'TitleTitleTitleTitleTitleTitleTitleTitle',
     icon: 'Add',
-    meta: '+99',
+    meta: 100,
     active: false,
     disabled: false,
     onItemClick

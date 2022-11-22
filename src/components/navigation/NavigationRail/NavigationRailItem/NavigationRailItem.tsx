@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { FC, LiHTMLAttributes } from 'react';
 
+import { Badge } from '../../../Badge/Badge';
 import { Icon, IconVariant } from '../../../Icon/Icon';
 import { useStyles } from './styles';
 
@@ -8,6 +9,7 @@ export interface NavigationRailItemProps
   extends LiHTMLAttributes<HTMLLIElement> {
   id: string;
   icon: IconVariant;
+  meta?: number;
   active?: boolean;
   disabled?: boolean;
   onItemClick?: (id: string) => void;
@@ -16,6 +18,7 @@ export interface NavigationRailItemProps
 export const NavigationRailItem: FC<NavigationRailItemProps> = ({
   id,
   icon,
+  meta,
   active,
   disabled,
   onItemClick
@@ -35,7 +38,9 @@ export const NavigationRailItem: FC<NavigationRailItemProps> = ({
       ])}
       onClick={handleClick}
     >
-      {icon && <Icon className={styles.icon} icon={icon} size={24} />}
+      <Badge count={meta}>
+        <Icon className={styles.icon} icon={icon} size={24} />
+      </Badge>
     </li>
   );
 };

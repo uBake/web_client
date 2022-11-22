@@ -24,13 +24,19 @@ export const FloatingActionButton: FC<FloatingActionButtonProps> = ({
   label,
   icon,
   disabled,
+  className,
   ...props
 }) => {
   const styles = useStyles();
 
   return (
     <button
-      className={clsx([styles.button, styles[size], styles[variant]])}
+      className={clsx([
+        styles.button,
+        styles[size],
+        styles[variant],
+        className
+      ])}
       disabled={disabled}
       {...props}
     >

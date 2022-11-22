@@ -10,10 +10,10 @@ export const useStyles = createUseStyles(
     },
     badge: {
       aspectRatio: ({ count }: BadgeProps) =>
-        count !== undefined ? 'auto' : aspectRatio['1/1'],
-      minWidth: ({ count }: BadgeProps) => (count !== undefined ? 'auto' : 8),
-      height: ({ count }: BadgeProps) => (count !== undefined ? 16 : 8),
-      padding: ({ count }: BadgeProps) => (count !== undefined ? '0 4.5px' : 0),
+        count && count > 1 ? 'auto' : aspectRatio['1/1'],
+      minWidth: ({ count }: BadgeProps) => (count && count > 1 ? 'auto' : 8),
+      height: ({ count }: BadgeProps) => (count && count > 1 ? 16 : 8),
+      padding: ({ count }: BadgeProps) => (count && count > 1 ? '0 4.5px' : 0),
       margin: 0,
       marginBlock: 0,
       marginInline: 0,

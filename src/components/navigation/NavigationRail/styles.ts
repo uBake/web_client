@@ -1,7 +1,7 @@
 import { createUseStyles } from 'react-jss';
 
 export const useStyles = createUseStyles(
-  ({ palette: { surface2, onSurfaceVariant }, borderRadius }) => ({
+  ({ palette: { surface1, onSurfaceVariant }, borderRadius }) => ({
     rail: {
       position: 'absolute',
       top: 0,
@@ -13,7 +13,7 @@ export const useStyles = createUseStyles(
       flexDirection: 'column',
       gap: 16,
       alignItems: 'center',
-      background: surface2
+      background: surface1
     },
     head: {
       display: 'flex',
@@ -32,7 +32,11 @@ export const useStyles = createUseStyles(
     icon: {
       fill: 'inherit'
     },
-    fab: {},
+    fab: {
+      '&:not([disabled])': {
+        filter: 'none'
+      }
+    },
     body: {}
   })
 );

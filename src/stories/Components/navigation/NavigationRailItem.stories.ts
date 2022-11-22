@@ -30,6 +30,7 @@ export const NavigationRailItem = {
     icon: 'Add',
     active: false,
     disabled: false,
+    meta: 99,
     onItemClick
   }
 };
