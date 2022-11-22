@@ -1,10 +1,11 @@
 import clsx from 'clsx';
 import { FC, LiHTMLAttributes } from 'react';
 
-import { Icon, IconVariant } from '../../Icon/Icon';
+import { Icon, IconVariant } from '../../../Icon/Icon';
 import { useStyles } from './styles';
 
-export interface NavigationItemProps extends LiHTMLAttributes<HTMLLIElement> {
+export interface NavigationDrawerItemProps
+  extends LiHTMLAttributes<HTMLLIElement> {
   id: string;
   title: string;
   icon: IconVariant;
@@ -14,7 +15,7 @@ export interface NavigationItemProps extends LiHTMLAttributes<HTMLLIElement> {
   onActive?: (id: string) => void;
 }
 
-export const NavigationItem: FC<NavigationItemProps> = ({
+export const NavigationDrawerItem: FC<NavigationDrawerItemProps> = ({
   id,
   title,
   icon,

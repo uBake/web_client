@@ -6,7 +6,7 @@ export const useStyles = createUseStyles(
     borderRadius,
     typography
   }) => ({
-    navigation: {
+    drawer: {
       position: 'absolute',
       top: 0,
       left: 0,

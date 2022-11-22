@@ -1,19 +1,19 @@
 import { FC, HTMLAttributes } from 'react';
 
-import { FloatingActionButton, FloatingActionButtonProps } from '../FloatingActionButton/FloatingActionButton';
-import { Icon, IconVariant } from '../Icon/Icon';
-import { NavigationItem, NavigationItemProps } from './NavigationItem/NavigationItem';
+import { FloatingActionButton, FloatingActionButtonProps } from '../../FloatingActionButton/FloatingActionButton';
+import { Icon, IconVariant } from '../../Icon/Icon';
+import { NavigationDrawerItem, NavigationDrawerItemProps } from './NavigationDrawerItem/NavigationDrawerItem';
 import { useStyles } from './styles';
 
-export interface NavigationProps extends HTMLAttributes<HTMLElement> {
+export interface NavigationDrawerProps extends HTMLAttributes<HTMLElement> {
   title: string;
   subtitle?: string;
   icon?: IconVariant;
   fab?: FloatingActionButtonProps;
-  items: NavigationItemProps[];
+  items: NavigationDrawerItemProps[];
 }
 
-export const Navigation: FC<NavigationProps> = ({
+export const NavigationDrawer: FC<NavigationDrawerProps> = ({
   title,
   subtitle,
   items,
@@ -22,8 +22,8 @@ export const Navigation: FC<NavigationProps> = ({
 }) => {
   const styles = useStyles();
   return (
-    <nav className={styles.navigation}>
-      {(title || subtitle) && (
+    <nav className={styles.drawer}>
+      {(title || subtitle || icon || fab) && (
         <div className={styles.head}>
           {icon && (
             <div className={styles.iconWrapper}>
@@ -43,7 +43,7 @@ export const Navigation: FC<NavigationProps> = ({
       )}
       <ul className={styles.body}>
         {items.map(item => (
-          <NavigationItem {...item} />
+          <NavigationDrawerItem key={item.id} {...item} />
         ))}
       </ul>
     </nav>

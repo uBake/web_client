@@ -37,6 +37,7 @@ export const useStyles = createUseStyles(
         cursor: 'not-allowed',
         background: onSurface + opacity[12],
         color: onSurface + opacity[38],
+        fill: onSurface + opacity[38],
         filter: 'none'
       }
     },

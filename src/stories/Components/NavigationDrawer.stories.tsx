@@ -1,10 +1,10 @@
 import { ComponentMeta } from '@storybook/react';
 
-import { Navigation as StoryBase } from '../../components/Navigation/Navigation';
+import { NavigationDrawer as StoryBase } from '../../components/navigation/NavigationDrawer/NavigationDrawer';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Components',
+  title: 'Components/Navigation',
   component: StoryBase,
   argTypes: {}
 } as ComponentMeta<typeof StoryBase>;
@@ -13,7 +13,7 @@ const onClick = (id: string) => {
   console.log('onClick', id);
 };
 
-export const Navigation = {
+export const NavigationDrawer = {
   args: {
     icon: 'Placeholder',
     title: 'Title',
