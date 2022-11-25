@@ -20,7 +20,7 @@ export const Image: FC<CustomImageProps> = ({
 }) => {
   const styles = useStyles({ variant });
 
-  const currHeight = variant === 'avatar' ? height : width / Number(variant);
+  const currHeight = variant === 'avatar' ? 40 : width / Number(variant);
 
   return (
     <NextImage

@@ -9,6 +9,7 @@ type ButtonVariants = 'filled' | 'tonal' | 'outlined' | 'elevated' | 'ghost';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: IconVariant;
+  iconSize?: number;
   label?: string;
   disabled?: boolean;
   variant?: ButtonVariants;
@@ -23,6 +24,7 @@ export interface IconButtonProps extends ButtonProps {
 export const Button: FC<ButtonProps> = ({
   children,
   icon,
+  iconSize = 18,
   label,
   disabled = false,
   variant = 'filled',
@@ -39,7 +41,7 @@ export const Button: FC<ButtonProps> = ({
       {...props}
     >
       {children && children}
-      {icon && <Icon className={styles.icon} icon={icon} />}
+      {icon && <Icon size={iconSize} className={styles.icon} icon={icon} />}
       {label && <span>{label}</span>}
     </button>
   );
