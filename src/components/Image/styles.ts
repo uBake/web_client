@@ -1,5 +1,12 @@
 import { createUseStyles } from 'react-jss';
 
-export const useStyles = createUseStyles(() => ({
-  wrapper: {}
-}));
+import { CustomImageProps } from './Image';
+
+export const useStyles = createUseStyles(
+  ({ borderRadius: { flat, full } }) => ({
+    image: {
+      borderRadius: ({ variant }: Partial<CustomImageProps>) =>
+        variant === 'avatar' ? full : flat
+    }
+  })
+);
