@@ -20,6 +20,7 @@ export const Button = {
     variant: 'filled',
     label: 'Button',
     disabled: false,
-    direction: 'row'
+    direction: 'row',
+    icon: 'Placeholder'
   }
 };

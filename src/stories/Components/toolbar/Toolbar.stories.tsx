@@ -2,9 +2,10 @@ import { ComponentMeta } from '@storybook/react';
 
 import { Toolbar as StoryBase } from '../../../components/Toolbar/Toolbar';
 import { genFakeIconButton } from '../../helpers';
+import { ToolbarTitle } from './ToolbarTitle.stories';
 
 export default {
-  title: 'Components',
+  title: 'Components/Toolbar',
   component: StoryBase,
   argTypes: {}
 } as ComponentMeta<typeof StoryBase>;
@@ -14,12 +15,7 @@ export const Toolbar = {
     iconButton: {
       icon: 'Placeholder'
     },
-    title: 'Title',
-    subtitle: 'Subtitle',
-    image: {
-      src: 'https://picsum.photos/40',
-      unoptimized: true
-    },
+    ...ToolbarTitle.args,
     navigationItems: [
       genFakeIconButton('1'),
       genFakeIconButton('2'),

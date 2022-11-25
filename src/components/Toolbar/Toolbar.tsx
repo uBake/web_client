@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { FC, HTMLAttributes } from 'react';
 
 import { Button, IconButtonProps } from '../buttons/Button/Button';
@@ -19,12 +20,13 @@ export const Toolbar: FC<ToolbarProps> = ({
   title,
   subtitle,
   image,
-  navigationItems
+  navigationItems,
+  className
 }) => {
   const styles = useStyles();
 
   return (
-    <div className={styles.wrapper}>
+    <div className={clsx(styles.wrapper, className)}>
       {iconButton && (
         <div className={styles.iconButtonWrapper}>
           <Button

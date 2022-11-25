@@ -21,7 +21,7 @@ export const useStyles = createUseStyles(({ palette, typography }) => ({
     rowGap: ({ size }: StyleProps) => (size === 'large' ? 36 : 0),
     padding: '0 4px'
   },
-  leftPart: {
+  iconButton: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',

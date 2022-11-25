@@ -1,41 +1,66 @@
 import { FC, HTMLAttributes } from 'react';
 
+import { Button, IconButtonProps } from '../buttons/Button/Button';
+import { CustomImageProps } from '../Image/Image';
 import { TabProps } from '../Tabs/Tab/Tab';
 import { Tabs } from '../Tabs/Tabs';
+import { Toolbar } from '../Toolbar/Toolbar';
+import { ToolbarNavigation } from '../Toolbar/ToolbarNavigation/ToolbarNavigation';
 import { useStyles } from './styles';
 
 export type TopAppBarSize = 'standard' | 'medium' | 'large';
 
 export interface TopAppBarProps extends HTMLAttributes<HTMLDivElement> {
-  leftPart?: JSX.Element;
-  onTabSelect: (id: string) => void;
-  rightPart?: JSX.Element[];
+  onTabSelect?: (id: string) => void;
   size?: TopAppBarSize;
   tabs?: TabProps[];
-  title: string;
+  iconButton?: IconButtonProps;
+  title?: string;
+  subtitle?: string;
+  image?: CustomImageProps;
+  navigationItems?: IconButtonProps[];
 }
 
 export const TopAppBar: FC<TopAppBarProps> = ({
-  leftPart,
   onTabSelect,
-  rightPart,
   size = 'standard',
   tabs,
-  title = 'Title'
+  iconButton,
+  title,
+  subtitle,
+  image,
+  navigationItems
 }) => {
   const styles = useStyles({ size });
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.head}>
-        {leftPart && <div className={styles.leftPart}>{leftPart}</div>}
-        <h2 className={styles.title}>{title}</h2>
-        {rightPart && (
-          <div className={styles.rightPart}>
-            {rightPart.map((El: JSX.Element, id: number) => (
-              <div key={id}>{El}</div>
-            ))}
-          </div>
+        {iconButton && size !== 'standard' && (
+          <Button
+            variant='ghost'
+            className={styles.iconButton}
+            iconSize={24}
+            {...iconButton}
+          />
+        )}
+        <Toolbar
+          iconButton={
+            size === 'standard' && iconButton ? iconButton : undefined
+          }
+          title={title}
+          subtitle={subtitle}
+          image={image}
+          navigationItems={
+            size === 'standard' && navigationItems ? navigationItems : undefined
+          }
+          className={styles.title}
+        />
+        {navigationItems && size !== 'standard' && (
+          <ToolbarNavigation
+            className={styles.rightPart}
+            items={navigationItems}
+          />
         )}
       </div>
       {tabs && (
