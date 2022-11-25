@@ -17,6 +17,8 @@ export const useStyles = createUseStyles(
     head: {
       padding: [0, 4]
     },
-    body: {}
+    body: {
+      padding: 8
+    }
   })
 );
