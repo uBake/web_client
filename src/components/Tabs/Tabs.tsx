@@ -5,7 +5,7 @@ import { useStyles } from './styles';
 import { Tab, TabData } from './Tab/Tab';
 
 export interface TabsProps extends HTMLAttributes<HTMLDivElement> {
-  onTabSelect: (id: string) => void;
+  onTabSelect?: (id: string) => void;
   selectedId: string;
   tabs: TabData[];
 }
