@@ -10,7 +10,7 @@ import { useStyles } from './styles';
 
 export type TopAppBarSize = 'standard' | 'medium' | 'large';
 
-export interface TopAppBarProps extends HTMLAttributes<HTMLDivElement> {
+export interface TopAppBarData {
   onTabSelect?: (id: string) => void;
   size?: TopAppBarSize;
   tabs?: TabProps[];
@@ -20,6 +20,8 @@ export interface TopAppBarProps extends HTMLAttributes<HTMLDivElement> {
   image?: CustomImageProps;
   navigationItems?: IconButtonProps[];
 }
+
+export type TopAppBarProps = HTMLAttributes<HTMLDivElement> & TopAppBarData;
 
 export const TopAppBar: FC<TopAppBarProps> = ({
   onTabSelect,

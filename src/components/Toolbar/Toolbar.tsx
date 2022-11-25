@@ -7,13 +7,15 @@ import { useStyles } from './styles';
 import { ToolbarNavigation } from './ToolbarNavigation/ToolbarNavigation';
 import { ToolbarTitle } from './ToolbarTitle/ToolbarTitle';
 
-export interface ToolbarProps extends HTMLAttributes<HTMLDivElement> {
+export interface ToolbarData {
   iconButton?: IconButtonProps;
   title?: string;
   subtitle?: string;
   image?: CustomImageProps;
   navigationItems?: IconButtonProps[];
 }
+
+export type ToolbarProps = HTMLAttributes<HTMLDivElement> & ToolbarData;
 
 export const Toolbar: FC<ToolbarProps> = ({
   iconButton,
