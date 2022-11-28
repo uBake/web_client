@@ -1,15 +1,15 @@
 import { ComponentMeta } from '@storybook/react';
 
-import { Badge } from '../../components/Badge/Badge';
+import { Badge as StoryBase } from '../../components/Badge/Badge';
 import { Button } from '../../components/buttons/Button/Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Components',
-  component: Badge,
+  component: StoryBase,
   argTypes: {
     count: {
-      options: [undefined, 5, '99+'],
+      options: [1, 5, 999],
       control: 'radio'
     },
     hPos: {
@@ -21,11 +21,11 @@ export default {
       control: 'radio'
     }
   }
-} as ComponentMeta<typeof Badge>;
+} as ComponentMeta<typeof StoryBase>;
 
-export const Badges = {
+export const Badge = {
   args: {
-    count: undefined,
+    count: 1,
     hPos: 'right',
     vPos: 'top',
     children: <Button icon='Add' variant='ghost' />
