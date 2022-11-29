@@ -23,7 +23,8 @@ export const Toolbar: FC<ToolbarProps> = ({
   subtitle,
   image,
   navigationItems,
-  className
+  className,
+  children
 }) => {
   const styles = useStyles();
 
@@ -43,6 +44,7 @@ export const Toolbar: FC<ToolbarProps> = ({
         <ToolbarTitle title={title} subtitle={subtitle} image={image} />
       )}
       {navigationItems && <ToolbarNavigation items={navigationItems} />}
+      {children}
     </div>
   );
 };

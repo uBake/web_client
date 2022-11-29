@@ -1,11 +1,12 @@
 import { ComponentMeta } from '@storybook/react';
 
-import { Dialog as StoryBase } from '../../components/Dialog/Dialog';
-import { Button } from './buttons/Button.stories';
+import { FullscreenDialog as StoryBase } from '../../../components/dialogs/Fullscreen/Fullscreen';
+import { Button } from '../buttons/Button.stories';
+import { Toolbar } from '../toolbar/Toolbar.stories';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Components',
+  title: 'Components/Dialogs',
   component: StoryBase,
   argTypes: {
     open: {
@@ -14,26 +15,18 @@ export default {
   }
 } as ComponentMeta<typeof StoryBase>;
 
-export const Dialog = {
+export const FullscreenDialog = {
   args: {
+    ...Toolbar.args,
+    navigationItems: undefined,
     open: true,
     children: 'Dialog',
     icon: 'Placeholder',
     title: 'Title',
-    neutralBtn: {
+    closeButton: {
       ...Button.args,
       variant: 'ghost',
-      icon: ''
-    },
-    negativeBtn: {
-      ...Button.args,
-      variant: 'ghost',
-      icon: ''
-    },
-    positiveBtn: {
-      ...Button.args,
-      variant: 'ghost',
-      icon: ''
+      icon: undefined
     }
   }
 };

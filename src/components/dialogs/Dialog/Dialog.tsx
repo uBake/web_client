@@ -1,7 +1,7 @@
 import { DialogHTMLAttributes, FC } from 'react';
 
-import { Button, ButtonProps } from '../buttons/Button/Button';
-import { Icon, IconVariant } from '../Icon/Icon';
+import { Button, ButtonProps } from '../../buttons/Button/Button';
+import { Icon, IconVariant } from '../../Icon/Icon';
 import { useStyles } from './styles';
 
 export interface DialogProps extends DialogHTMLAttributes<HTMLDialogElement> {
