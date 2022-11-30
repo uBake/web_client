@@ -11,21 +11,21 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@next/font": "^13.0.4",
+    "@next/font": "^13.0.5",
     "clsx": "^1.2.1",
     "jss-preset-default": "^10.9.2",
-    "next": "^13.0.4",
+    "next": "^13.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-jss": "^10.9.2",
-    "react-redux": "^8.0.4"
+    "react-redux": "^8.0.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.19.6",
-    "@react-theming/storybook-addon": "^1.1.7",
-    "@reduxjs/toolkit": "^1.8.6",
-    "@spotify/eslint-config-base": "^14.1.0",
-    "@spotify/eslint-config-typescript": "^14.1.0",
+    "@babel/core": "^7.20.5",
+    "@react-theming/storybook-addon": "^1.1.9",
+    "@reduxjs/toolkit": "^1.9.1",
+    "@spotify/eslint-config-base": "^14.1.1",
+    "@spotify/eslint-config-typescript": "^14.1.1",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-essentials": "^6.5.13",
     "@storybook/addon-interactions": "^6.5.13",
@@ -37,18 +37,18 @@
     "@storybook/testing-library": "^0.0.13",
     "@storybook/theming": "^6.5.13",
     "@testing-library/react": "^13.4.0",
-    "@trivago/prettier-plugin-sort-imports": "^3.3.1",
-    "@types/jest": "^29.2.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.0.0",
+    "@types/jest": "^29.2.3",
     "@types/jss": "^10.0.0",
-    "@types/node": "^18.11.0",
-    "@types/react": "^18.0.21",
-    "@types/react-dom": "^18.0.6",
+    "@types/node": "^18.11.10",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
     "babel-loader": "^9.1.0",
-    "eslint": "^8.25.0",
-    "eslint-config-next": "^13.0.4",
+    "eslint": "^8.28.0",
+    "eslint-config-next": "^13.0.5",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-storybook": "^0.6.6",
-    "prettier": "^2.7.1",
-    "typescript": "^4.8.4"
+    "eslint-plugin-storybook": "^0.6.7",
+    "prettier": "^2.8.0",
+    "typescript": "^4.9.3"
   }
 }
