@@ -61,10 +61,11 @@ export const Chip: FC<ChipProps> = ({
       {avatar && (
         <Image
           width={18}
-          variant='avatar'
+          isAvatar
           src={avatar}
           alt={label}
           className={styles.avatar}
+          // TODO: remove this
           unoptimized
         />
       )}

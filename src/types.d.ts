@@ -28,9 +28,9 @@ export type ElevationLevel = 1 | 2 | 3 | 4 | 5;
 
 export type Elevations = Record<ElevationLevel, string>;
 
-export type AspectRatio = Record<AspectRatioVariants, number>;
+export type AspectRatio = Record<AspectRatioVariant, number>;
 
-type AspectRatioVariants = '1/1' | '5/4' | '4/3' | '16/9';
+type AspectRatioVariant = '1/1' | '5/4' | '4/3' | '16/9';
 
 export interface Border {
   outline: string;

@@ -1,25 +1,46 @@
 import { createUseStyles } from 'react-jss';
 
+import { getGradientWithOpacity } from './../../themes/helpers';
+
 export const useStyles = createUseStyles(
-  ({ borderRadius, border: { outline }, aspectRatio }) => ({
+  ({
+    borderRadius,
+    border: { outline },
+    elevations,
+    palette: { surface, surface1, surfaceVariant, onSurface },
+    opacity
+  }) => ({
     card: {
-      borderRadius: borderRadius.medium,
-      width: 320,
-      display: 'flex',
-      flexDirection: 'column',
+      borderRadius: borderRadius.extraLarge,
+      width: 'fit-content',
+      height: 'fit-content',
       overflow: 'hidden',
-      border: outline
+      cursor: 'pointer',
+      '&:hover': {
+        backgroundImage: getGradientWithOpacity(onSurface, opacity[8])
+      },
+      '&:active': {
+        backgroundImage: getGradientWithOpacity(onSurface, opacity[12])
+      }
     },
-    cardHead: {
-      aspectRatio: aspectRatio['16/9']
+
+    // Variants
+    outlined: {
+      border: outline,
+      backgroundColor: surface
     },
-    cardBody: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: 8,
-      width: '100%',
-      padding: 20
+    elevated: {
+      background: surface1,
+      filter: elevations[1],
+      '&:hover': {
+        filter: elevations[2]
+      },
+      '&:active': {
+        filter: elevations[3]
+      }
     },
-    cardTitle: {}
+    filled: {
+      backgroundColor: surfaceVariant
+    }
   })
 );

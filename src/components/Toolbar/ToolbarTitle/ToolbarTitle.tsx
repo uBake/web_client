@@ -20,7 +20,7 @@ export const ToolbarTitle: FC<ToolbarTitleProps> = ({
     <div className={styles.wrapper}>
       {image && (
         <Image
-          variant='avatar'
+          isAvatar
           className={styles.image}
           {...image}
           width={40}
