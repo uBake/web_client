@@ -9,19 +9,29 @@ interface TooltipProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   position: TooltipPos;
   text: string;
+  show?: boolean;
 }
 
-export const Tooltip: FC<TooltipProps> = ({ children, text, position }) => {
+export const Tooltip: FC<TooltipProps> = ({
+  children,
+  text,
+  position,
+  className,
+  show = true,
+  ...props
+}) => {
   const styles = useStyles();
 
   return (
-    <div className={clsx(styles.wrapper)}>
-      <div className={clsx(styles.tooltipWrapper, styles[position])}>
-        <span className={styles.tooltip}>
-          <Tip className={styles.tip} />
-          {text && text.length > 0 ? text : 'Tooltip'}
-        </span>
-      </div>
+    <div className={clsx(styles.wrapper, className)} {...props}>
+      {show && (
+        <div className={clsx(styles.tooltipWrapper, styles[position])}>
+          <span className={styles.tooltip}>
+            <Tip className={styles.tip} />
+            {text && text.length > 0 ? text : 'Tooltip'}
+          </span>
+        </div>
+      )}
       {children}
     </div>
   );

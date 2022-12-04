@@ -22,7 +22,7 @@ export type FlexDirections =
 
 export type Opacity = Record<opacityVariants, string>;
 
-export type opacityVariants = 8 | 12 | 16 | 32 | 38;
+export type opacityVariants = 8 | 12 | 16 | 32 | 38 | 100;
 
 export type ElevationLevel = 1 | 2 | 3 | 4 | 5;
 

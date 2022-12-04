@@ -1,4 +1,6 @@
-import { Color } from '../types';
+import { Color, Opacity } from '../types';
 
-export const getGradientWithOpacity = (color: Color, opacity: string) =>
-  `linear-gradient(${color}${opacity}, ${color}${opacity})`;
+export const getGradientWithOpacity = (
+  color: Color,
+  opacity?: Opacity[keyof Opacity]
+) => `linear-gradient(${color}${opacity}, ${color}${opacity})`;

@@ -5,5 +5,6 @@ export const opacity: Opacity = {
   12: '1E',
   16: '28',
   32: '50',
-  38: '5F'
+  38: '5F',
+  100: 'FF'
 };
