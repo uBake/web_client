@@ -1,6 +1,7 @@
 import { createUseStyles } from 'react-jss';
 
 import { getGradientWithOpacity } from './../../../themes/helpers';
+import { SnackbarProps } from './Snackbar';
 
 export const useStyles = createUseStyles(
   ({
@@ -20,6 +21,8 @@ export const useStyles = createUseStyles(
       borderRadius: borderRadius.large,
       color: inverseOnSurface,
       display: 'flex',
+      flexWrap: ({ type }: Partial<SnackbarProps>) =>
+        type === 'multiple' ? 'wrap' : 'nowrap',
       width: 344,
       padding: [0, 8]
     },
@@ -31,7 +34,8 @@ export const useStyles = createUseStyles(
       ...typography.sizes.body.medium
     },
     buttonWrapper: {
-      padding: [4, 0]
+      padding: [4, 0],
+      marginLeft: 'auto'
     },
     btn: {
       padding: [10, 12],
