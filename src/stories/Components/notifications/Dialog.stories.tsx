@@ -5,7 +5,7 @@ import { Button } from '../buttons/Button.stories';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Dialogs',
+  title: 'Components/Notifications',
   component: StoryBase,
   argTypes: {
     open: {
