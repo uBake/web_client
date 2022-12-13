@@ -7,6 +7,7 @@ export const darkTheme: DefaultTheme = {
   ...defaultTheme,
   palette: {
     primary: colors.primary[80],
+    inversePrimary: colors.primary[40],
     onPrimary: colors.primary[20],
     primaryContainer: colors.primary[30],
     onPrimaryContainer: colors.primary[90],

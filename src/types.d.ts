@@ -61,6 +61,7 @@ export type Palette = Record<PaletteColorNames, string>;
 
 export enum PaletteColorNames {
   primary = 'primary',
+  inversePrimary = 'inversePrimary',
   onPrimary = 'onPrimary',
   primaryContainer = 'primaryContainer',
   onPrimaryContainer = 'onPrimaryContainer',

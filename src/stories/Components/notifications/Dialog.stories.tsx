@@ -1,6 +1,6 @@
 import { ComponentMeta } from '@storybook/react';
 
-import { Dialog as StoryBase } from '../../../components/dialogs/Dialog/Dialog';
+import { Dialog as StoryBase } from '../../../components/notifications/Dialog/Dialog';
 import { Button } from '../buttons/Button.stories';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

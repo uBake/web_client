@@ -7,6 +7,7 @@ export const lightTheme: DefaultTheme = {
   ...defaultTheme,
   palette: {
     primary: colors.primary[40],
+    inversePrimary: colors.primary[80],
     onPrimary: colors.primary[100],
     primaryContainer: colors.primary[90],
     onPrimaryContainer: colors.primary[10],

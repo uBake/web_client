@@ -1,6 +1,6 @@
 import { ComponentMeta } from '@storybook/react';
 
-import { FullscreenDialog as StoryBase } from '../../../components/dialogs/Fullscreen/Fullscreen';
+import { FullscreenDialog as StoryBase } from '../../../components/notifications/FullscreenDialog/FullscreenDialog';
 import { Button } from '../buttons/Button.stories';
 import { Toolbar } from '../toolbar/Toolbar.stories';
 
