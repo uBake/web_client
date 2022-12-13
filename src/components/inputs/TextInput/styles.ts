@@ -34,12 +34,7 @@ export const useStyles = createUseStyles(
       padding: 16,
       minWidth: 288,
       height: 56,
-      border: {
-        width: ({ value }: InputProps) =>
-          value && value.toString().length ? 2 : 1,
-        style: 'solid',
-        color: palette.outline
-      },
+      border: `1px solid ${palette.outline}`,
       font: 'inherit',
       background: palette.surface,
       color: palette.onSurface,
