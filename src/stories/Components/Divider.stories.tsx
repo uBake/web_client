@@ -1,11 +1,11 @@
 import { ComponentMeta, Story } from '@storybook/react';
 
-import { Divider as DividerBase } from '../../components/Divider/Divider';
+import { Divider as StoryBase } from '../../components/Divider/Divider';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Components',
-  component: DividerBase,
+  component: StoryBase,
   decorators: [
     (Story: Story) => (
       <div
@@ -21,7 +21,7 @@ export default {
       </div>
     )
   ]
-} as ComponentMeta<typeof DividerBase>;
+} as ComponentMeta<typeof StoryBase>;
 
 export const Divider = {
   args: {

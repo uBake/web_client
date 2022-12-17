@@ -1,7 +1,7 @@
 import { ComponentMeta } from '@storybook/react';
 
 import { SegmentedButtonProps } from '../../../components/buttons/SegmetedButtons/SegmentedButton/SegmentedButton';
-import { SegmentedButtons as BaseForStory } from '../../../components/buttons/SegmetedButtons/SegmentedButtons';
+import { SegmentedButtons as StoryBase } from '../../../components/buttons/SegmetedButtons/SegmentedButtons';
 
 const getFakeButton = (id: string): SegmentedButtonProps => ({
   id,
@@ -22,7 +22,7 @@ const variants = { oneChild, twoChildren, someChildren };
 
 export default {
   title: 'Components/Buttons',
-  component: BaseForStory,
+  component: StoryBase,
   argTypes: {
     btns: {
       options: Object.keys(variants),
@@ -38,7 +38,7 @@ export default {
       options: ['row', 'column']
     }
   }
-} as ComponentMeta<typeof BaseForStory>;
+} as ComponentMeta<typeof StoryBase>;
 
 export const SegmentedButtons = {
   args: {

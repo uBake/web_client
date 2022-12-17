@@ -1,11 +1,11 @@
 import { ComponentMeta, Story } from '@storybook/react';
 
-import { Tooltip as TooltipBase } from '../../components/Tooltip/Tooltip';
+import { Tooltip as StoryBase } from '../../components/Tooltip/Tooltip';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Components',
-  component: TooltipBase,
+  component: StoryBase,
   decorators: [
     (Story: Story) => (
       <div style={{ padding: 100 }}>
@@ -13,7 +13,7 @@ export default {
       </div>
     )
   ]
-} as ComponentMeta<typeof TooltipBase>;
+} as ComponentMeta<typeof StoryBase>;
 
 export const Tooltip = {
   args: {

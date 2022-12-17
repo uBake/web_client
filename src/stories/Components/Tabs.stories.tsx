@@ -1,6 +1,6 @@
 import { ComponentMeta, Story } from '@storybook/react';
 
-import { Tabs as TabsBase } from '../../components/Tabs/Tabs';
+import { Tabs as StoryBase } from '../../components/Tabs/Tabs';
 import { genFakeTab } from '../helpers';
 
 const tabs = [genFakeTab('1'), genFakeTab('2'), genFakeTab('3')];
@@ -8,7 +8,7 @@ const tabs = [genFakeTab('1'), genFakeTab('2'), genFakeTab('3')];
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Components',
-  component: TabsBase,
+  component: StoryBase,
   decorators: [
     (Story: Story) => (
       <div style={{ padding: 100 }}>
@@ -16,7 +16,7 @@ export default {
       </div>
     )
   ]
-} as ComponentMeta<typeof TabsBase>;
+} as ComponentMeta<typeof StoryBase>;
 
 export const Tabs = {
   args: {
