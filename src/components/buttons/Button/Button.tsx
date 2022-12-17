@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { ButtonHTMLAttributes, FC } from 'react';
 
 import { FlexDirections } from '../../../types';
-import { Icon, IconVariant } from '../../Icon/Icon';
+import { IconVariant } from '../../Icon/Icon';
 import { useStyles } from './styles';
 
 type ButtonVariants = 'filled' | 'tonal' | 'outlined' | 'elevated' | 'ghost';
@@ -40,7 +40,7 @@ export const Button: FC<ButtonProps> = ({
       className={clsx(styles.button, styles[variant], className)}
       {...props}
     >
-      {children && children}
+      {children}
       {icon && <Icon size={iconSize} className={styles.icon} icon={icon} />}
       {label && <span>{label}</span>}
     </button>

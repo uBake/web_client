@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { FC, LiHTMLAttributes } from 'react';
 
 import { Badge } from '../../../Badge/Badge';
-import { Icon, IconVariant } from '../../../Icon/Icon';
+import { IconVariant } from '../../../Icon/Icon';
 import { useStyles } from './styles';
 
 export interface NavigationRailItemProps

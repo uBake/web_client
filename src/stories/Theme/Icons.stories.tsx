@@ -1,4 +1,4 @@
-import { Icon, icons, IconVariant } from '../../components/Icon/Icon';
+import { icons, IconVariant } from '../../components/Icon/Icon';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

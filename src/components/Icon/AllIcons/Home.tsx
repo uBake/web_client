@@ -1,6 +1,6 @@
-import { Icon } from '../Icon';
+import { IconType } from '../Icon';
 
-const SvgComponent: Icon = props => (
+const SvgComponent: IconType = props => (
   <svg
     width='25'
     height='24'

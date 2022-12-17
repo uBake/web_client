@@ -5,6 +5,7 @@ import AccountPlus from './AllIcons/AccountPlus';
 import Add from './AllIcons/Add';
 import AddButton from './AllIcons/AddButton';
 import ArrowBack from './AllIcons/ArrowBack';
+import ArrowFilled from './AllIcons/ArrowFilled';
 import ArrowNext from './AllIcons/ArrowNext';
 import Back from './AllIcons/Back';
 import Cake from './AllIcons/Cake';
@@ -53,6 +54,7 @@ export type IconVariant =
   | 'Add'
   | 'AddButton'
   | 'ArrowBack'
+  | 'ArrowFilled'
   | 'ArrowNext'
   | 'Back'
   | 'Cake'
@@ -95,9 +97,9 @@ export type IconVariant =
   | 'Tools'
   | 'Window';
 
-export type Icon = FC<SVGProps<SVGSVGElement>>;
+export type IconType = FC<SVGProps<SVGSVGElement>>;
 
-type Icons = Record<IconVariant, Icon>;
+type Icons = Record<IconVariant, IconType>;
 
 export const icons: Icons = {
   Account,
@@ -105,6 +107,7 @@ export const icons: Icons = {
   Add,
   AddButton,
   ArrowBack,
+  ArrowFilled,
   ArrowNext,
   Back,
   Cake,
@@ -156,5 +159,5 @@ export interface IconProps extends SVGProps<SVGSVGElement> {
 export const Icon: FC<IconProps> = ({ icon, size = 24, ...props }) => {
   const CurrEl = icons[icon];
 
-  return <CurrEl width={size} height={size} {...props} />;
+  return <CurrEl fill='inherit' width={size} height={size} {...props} />;
 };
