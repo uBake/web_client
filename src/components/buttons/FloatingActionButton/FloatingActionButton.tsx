@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { FC } from 'react';
 
+import { Icon } from '../../Icon/Icon';
 import { ButtonProps } from '../Button/Button';
 import { useStyles } from './styles';
 

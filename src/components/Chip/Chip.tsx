@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { FC, HTMLAttributes, useState } from 'react';
 
-import { IconVariant } from '../Icon/Icon';
+import { Icon, IconVariant } from '../Icon/Icon';
 import { Image } from '../Image/Image';
 import { useStyles } from './styles';
 

@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { ButtonHTMLAttributes, FC } from 'react';
 
 import { FlexDirections } from '../../../types';
-import { IconVariant } from '../../Icon/Icon';
+import { Icon, IconVariant } from '../../Icon/Icon';
 import { useStyles } from './styles';
 
 type ButtonVariants = 'filled' | 'tonal' | 'outlined' | 'elevated' | 'ghost';

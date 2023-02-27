@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { FC, LiHTMLAttributes } from 'react';
 
-import { IconVariant } from '../../../Icon/Icon';
+import { Icon, IconVariant } from '../../../Icon/Icon';
 import { useStyles } from './styles';
 
 export interface NavigationDrawerItemProps
