@@ -1,13 +1,18 @@
-import { Manrope } from '@next/font/google';
-import type { AppProps } from 'next/app';
+import '../styles/global.css';
+
+import { Manrope } from 'next/font/google';
 import { useEffect } from 'react';
 import { Provider } from 'react-redux';
 
 import { MyThemeProvider } from '../src/themes/ThemeProvider';
 import { store } from '../store/store';
-import '../styles/global.css';
 
-const font = Manrope({ weight: ['400', '500', '700'], display: 'swap' });
+import type { AppProps } from 'next/app';
+const font = Manrope({
+  weight: ['400', '500', '700'],
+  display: 'swap',
+  subsets: ['latin', 'cyrillic']
+});
 
 const App = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {

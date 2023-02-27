@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import { ChangeEvent, FC, useState } from 'react';
 
 import { InputProps } from '..';
+import { Icon } from '../../Icon/Icon';
 import { useStyles } from './styles';
 
 export interface CheckboxProps extends InputProps {

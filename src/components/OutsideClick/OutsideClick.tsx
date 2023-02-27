@@ -18,7 +18,7 @@ export const OutsideClick: FC<OutsideClickProps> = ({
 
   const styles = useStyles();
 
-  const handleClick = (e: SyntheticEvent<HTMLDivElement>) => {
+  const handleOutsideClick = (e: SyntheticEvent<HTMLDivElement>) => {
     if (e.currentTarget === e.target) {
       onClose();
     }
@@ -41,7 +41,7 @@ export const OutsideClick: FC<OutsideClickProps> = ({
 
   return (
     <div
-      onClick={handleClick}
+      onClick={handleOutsideClick}
       data-close
       className={clsx(styles.wrapper, className)}
     >
