@@ -25,6 +25,9 @@ export const useStyles = createUseStyles(
       borderRadius: borderRadius.extraSmall / 2,
       width: 18,
       height: 18,
+      '& svg': {
+        fill: 'transparent'
+      },
       '&>div': {
         position: 'absolute',
         width: 0,

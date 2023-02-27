@@ -35,7 +35,6 @@ export const Checkbox: FC<CheckboxProps> = ({
         data-error={error}
         className={styles.checkbox}
       >
-        <div></div>
         <Icon icon='Done' className={styles.check} />
         <input
           checked={isChecked}
