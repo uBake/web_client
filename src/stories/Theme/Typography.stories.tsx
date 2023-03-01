@@ -1,7 +1,7 @@
 import { typography } from '../../themes/typography';
 import { FontWeightsVariants, TypographyTypes } from '../../types';
 
-export default {
+const Story = {
   title: 'Theme',
   argTypes: {
     weight: {
@@ -10,6 +10,8 @@ export default {
     }
   }
 };
+
+export default Story;
 
 export const Typography = ({ weight }: { weight: FontWeightsVariants }) => (
   <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>

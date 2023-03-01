@@ -2,9 +2,11 @@ import { colors } from '../../themes/colors';
 import { ColorNames } from '../../types';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
+const Story = {
   title: 'Theme'
 };
+
+export default Story;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 export const Colors = () => (

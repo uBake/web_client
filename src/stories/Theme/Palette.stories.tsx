@@ -4,7 +4,7 @@ import { ThemeModes, themes } from '../../themes';
 import { PaletteColorNames } from '../../types';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
+const Story = {
   title: 'Theme',
   argTypes: {
     theme: {
@@ -18,6 +18,8 @@ export default {
     }
   }
 };
+
+export default Story;
 
 interface PaletteTemplateProps {
   theme: DefaultTheme;

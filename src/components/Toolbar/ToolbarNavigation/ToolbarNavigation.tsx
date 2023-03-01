@@ -13,7 +13,7 @@ export const ToolbarNavigation: FC<ToolbarNavigationProps> = ({ items }) => {
   return (
     <div className={styles.wrapper}>
       {items.map(item => (
-        <div className={styles.iconButtonWrapper}>
+        <div className={styles.iconButtonWrapper} key={item.icon}>
           <Button
             variant='ghost'
             className={styles.iconButton}

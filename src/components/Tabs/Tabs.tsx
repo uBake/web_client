@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { FC, HTMLAttributes, useEffect, useState } from 'react';
+import { FC, HTMLAttributes, useCallback, useEffect, useState } from 'react';
 
 import { useStyles } from './styles';
 import { Tab, TabData } from './Tab/Tab';
@@ -18,17 +18,21 @@ export const Tabs: FC<TabsProps> = ({
   ...props
 }) => {
   const [selectedTabId, setSelectedTabId] = useState<string>(selectedId);
-  const selectHandler = (tabId: string) => {
-    setSelectedTabId(tabId);
-    onTabSelect && onTabSelect(tabId);
-  };
+  const selectHandler = useCallback(
+    (tabId: string) => {
+      setSelectedTabId(tabId);
+      onTabSelect && onTabSelect(tabId);
+    },
+    [onTabSelect]
+  );
+
   useEffect(() => {
     if (selectedId && selectedId.length > 0) {
       selectHandler(selectedId);
     } else {
       selectHandler(tabs[0].id);
     }
-  }, []);
+  }, [selectHandler, selectedId, tabs]);
 
   const styles = useStyles();
 

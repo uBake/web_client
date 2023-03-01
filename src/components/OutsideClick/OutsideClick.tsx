@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { FC, HTMLAttributes, SyntheticEvent, useEffect } from 'react';
+import { FC, HTMLAttributes, SyntheticEvent, useCallback, useEffect } from 'react';
 
 import { useStyles } from './styles';
 
@@ -14,8 +14,6 @@ export const OutsideClick: FC<OutsideClickProps> = ({
   onClose,
   className
 }) => {
-  if (!isOpen) return null;
-
   const styles = useStyles();
 
   const handleOutsideClick = (e: SyntheticEvent<HTMLDivElement>) => {
@@ -24,11 +22,14 @@ export const OutsideClick: FC<OutsideClickProps> = ({
     }
   };
 
-  const closeByEsc = (e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      onClose();
-    }
-  };
+  const closeByEsc = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    },
+    [onClose]
+  );
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -37,9 +38,9 @@ export const OutsideClick: FC<OutsideClickProps> = ({
       document.body.style.overflow = 'auto';
       document.removeEventListener('keyup', closeByEsc);
     };
-  }, []);
+  }, [closeByEsc]);
 
-  return (
+  return isOpen ? (
     <div
       onClick={handleOutsideClick}
       data-close
@@ -47,5 +48,5 @@ export const OutsideClick: FC<OutsideClickProps> = ({
     >
       {children}
     </div>
-  );
+  ) : null;
 };
